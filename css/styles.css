@@ -10,7 +10,11 @@
   height: 50vh;
   padding: 5em inherit;
   margin-bottom: 0;
+<<<<<<< Updated upstream
   background-color: #fb53bb;
+=======
+  background-color: #fb5353;
+>>>>>>> Stashed changes
   background: url('../img/cover_back.png');
   background-size: cover;
   background-position: center;
