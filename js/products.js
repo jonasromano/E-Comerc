@@ -5,6 +5,6 @@ const PRODUCTS_URL = "https://japdevdep.github.io/ecommerce-api/product/all.json
 
 document.addEventListener("DOMContentLoaded", function (e) {
      Response.JSON(PRODUCTS_URL).then(function(resultObj){ 
-     if (resultObj.status === "ok");
+     if ("https://japdevdep.github.io/ecommerce-api/product/all.json".status === "ok");
    });
 })
