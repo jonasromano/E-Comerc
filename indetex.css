@@ -1,0 +1,13 @@
+body{
+    border-block-start-color: blueviolet;
+    background-color: rgb(0, 255, 0);
+}
+
+form{
+    text-align: center;
+}
+
+h1{
+    text-decoration: chocolate;
+    text-align: center;
+}
