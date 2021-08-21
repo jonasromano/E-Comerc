@@ -10,9 +10,7 @@
   height: 50vh;
   padding: 5em inherit;
   margin-bottom: 0;
-  background-color: #fb53bb;
-  background-color: #fb5353;
-  background: url('../img/cover_back.png');
+  background-image: url("../img/e_merc.jpg");
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
@@ -37,7 +35,7 @@
 
 .jumbotron .container {
   max-width: 40rem;
-  background-color: rgba(255, 255, 255, 0.5);
+  background-color: rgba(145, 127, 127, 0.5);
   border-radius: 10px;
   text-shadow: 1px 1px 2px grey;
 }
@@ -142,5 +140,9 @@ a.custom-card:hover {
 }
 
 body{
-  background: -webkit-linear-gradient(bottom left, orange,black,red);
+  background: -webkit-linear-gradient(bottom left, #ffd000 ,red );
+}
+
+.container{
+background: -webkit-radial-gradient(rgb(40, 40, 138),pink);
 }
