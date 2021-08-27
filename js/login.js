@@ -36,3 +36,14 @@ document.addEventListener("DOMContentLoaded", function(e){
        }
    });
 });
+
+    function estorage(){
+        let misDatos= {
+            dato1: document.getElementById('inputEmail').value,
+            dato2: document.getElementById('inputPassword').value
+        };
+
+        let elJson= JSON.stringify(misDatos);
+
+        localStorage.setItem('losDatos', elJson);
+    }
