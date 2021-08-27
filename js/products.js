@@ -53,16 +53,6 @@ function mostrarImagenes(){
   }
 }
 
-function criteriaANDarray( criteria, productes){
-  SortCriteria = criteria
-  if(productes != undefined){
-     productesArray = productes;
-  }
-  productesArray = rangoProductos(SortCriteria,productesArray);
-  mostrarImagenes();
-}
-
-
 
 document.addEventListener("DOMContentLoaded", function (e) {
 
@@ -74,5 +64,27 @@ document.addEventListener("DOMContentLoaded", function (e) {
      }
       
     });
+    
  });
 
+document.getElementById("precio").addEventListener("click", function(){
+
+        minCount = document.getElementById("precio").value;
+        maxCount = document.getElementById("precio").value;
+
+        if ((minCount != undefined) && (minCount != "") && (parseInt(minCount)) >= 0){
+          minCount = parseInt(minCount);
+      }
+      else{
+          minCount = undefined;
+      }
+
+      if ((maxCount != undefined) && (maxCount != "") && (parseInt(maxCount)) >= 0){
+          maxCount = parseInt(maxCount);
+      }
+      else{
+          maxCount = undefined;
+      }
+     mostrarImagenes();
+    });
+ 
