@@ -25,12 +25,11 @@
     </nav>
     <div class="container p-5">
       <div class="filter">
-        <div class="col text-right">
-            <input type="range"  step="any" id="sort" >
-            <div class="col-3 p-0"><button class="btn btn-light btn-block" id="rangeFilterCount">Filtrar</button>
-              <button class="btn btn-link btn-sm" id="clearRangeFilter">Limpiar</button>
-            </div>
-        </div>
+        <input type="filter">
+        <a href="#" id="filtros" filtros="all">TODOS</a>
+        <a href="#" id="filtros" filtros="12000-15200">12000-15200</a>
+        <a href="#" id="filtros" filtros="13000-15200">13000-15200</a>
+        </input>
       </div>
       <div id="lista"></div>
     </div>
