@@ -36,14 +36,3 @@ document.addEventListener("DOMContentLoaded", function(e){
        }
    });
 });
-
-    function estorage(){
-        let misDatos= {
-            dato1: document.getElementById('Contraseña').value,
-            dato2: document.getElementById('Correo electronico').value
-        };
-
-        let elJson= JSON.stringify(misDatos);
-
-        localStorage.setItem('losDatos', elJson);
-    }

@@ -12,6 +12,17 @@
     <!-- Bootstrap core CSS -->
     <link href="css/bootstrap.min.css" rel="stylesheet">
     <link href="css/styles.css" rel="stylesheet">
+    <script>
+      function llamado(){
+  if(localStorage.getItem('losDatos')){
+    elJson=localStorage.getItem('losDatos');
+    losDatos=JSON.parse(elJson);
+    document.getElementById('tgrupal').innerHTML=losDatos.dato1 + losDatos.dato2
+  }else{
+    document.getElementById('tgrupal').innerHTML = 'No hay datos'
+  }
+}
+    </script>
   </head>
   <body>
     <nav class="site-header sticky-top py-1 bg-dark">
@@ -21,7 +32,9 @@
         <a class="py-2 d-none d-md-inline-block" href="products.html">Productos</a>
         <a class="py-2 d-none d-md-inline-block" href="sell.html">Vender</a>
         <a class="py-2 d-none d-md-inline-block" href="cart.html">Mi carrito</a>
-      </div>
+        <div class="py-2 d-none d-md-inline-block">
+          <p id='tgrupal' onclick="llamado()">USUARIO</p>
+        </div>
     </nav>
     <main role="main">
       <section class="jumbotron text-center">
@@ -102,7 +115,6 @@
         <p>Clickea <a target="_blank" href="Letra.pdf">aquí</a> para descargar la letra del obligatorio.</p>
       </div>
     </footer>
-    <p id='tgrupal' onclick="llamado()">Datos</p>
     <script src="js/jquery-3.4.1.min.js"></script>
     <script src="js/bootstrap.bundle.min.js"></script>
     <script src="js/init.js"></script>

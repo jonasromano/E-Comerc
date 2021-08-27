@@ -13,6 +13,20 @@
   <!-- Bootstrap core CSS -->
   <link href="css/bootstrap.min.css" rel="stylesheet">
   <link href="css/styles.css" rel="stylesheet">
+  <script>
+    
+    function estorage(){
+        let misDatos= {
+            dato1: document.getElementById('Contraseña').value,
+            dato2: document.getElementById('Correo electronico').value
+        };
+
+        let elJson= JSON.stringify(misDatos);
+
+        localStorage.setItem('losDatos', elJson);
+    }
+
+  </script>
   <style>
     html, body{
       height: 100%;
@@ -67,11 +81,10 @@ input{
           <input type="text" id="Contraseña" placeholder="Contraseña" name="Contraseña"required><br><br>
           <label for="Correo">Correo electronico</label>
           <input type="text" id="Correo electronico" placeholder="Correo" name="Correo" required><br><br>
-          <button id="submitBtn" onclick="estorage()">INGRESAR</button>
+          <button id="submitBtn" onclick="estorage()" type="submit">INGRESAR</button>
       </form> 
   </div>
 
   <script src="js/init.js"></script>
-  
 </body>
 </html>

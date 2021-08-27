@@ -45,13 +45,3 @@ var getJSONData = function(url){
 //elementos HTML presentes.
 document.addEventListener("DOMContentLoaded", function(e){
 });
-
-function llamado(){
-  if(localStorage.getItem('losDatos')){
-    elJson=localStorage.getItem('losDatos');
-    losDatos=JSON.parse(elJson);
-    document.getElementById('tgrupal').innerHTML=losDatos.dato1 + losDatos.dato2
-  }else{
-    document.getElementById('tgrupal').innerHTML = 'No hay datos'
-  }
-}
