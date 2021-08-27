@@ -17,7 +17,7 @@
   if(localStorage.getItem('losDatos')){
     elJson=localStorage.getItem('losDatos');
     losDatos=JSON.parse(elJson);
-    document.getElementById('tgrupal').innerHTML=losDatos.dato1 + losDatos.dato2
+    document.getElementById('tgrupal').innerHTML=losDatos.dato1 
   }else{
     document.getElementById('tgrupal').innerHTML = 'No hay datos'
   }
@@ -33,7 +33,7 @@
         <a class="py-2 d-none d-md-inline-block" href="sell.html">Vender</a>
         <a class="py-2 d-none d-md-inline-block" href="cart.html">Mi carrito</a>
         <div class="py-2 d-none d-md-inline-block">
-          <p id='tgrupal' onclick="llamado()">USUARIO</p>
+          <p id='tgrupal' onclick="llamado()">USUARIO...</p>
         </div>
     </nav>
     <main role="main">
