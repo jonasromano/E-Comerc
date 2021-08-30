@@ -25,11 +25,22 @@
     </nav>
     <div class="container p-5">
       <div class="filter">
-        <input type="range" id="precio" name="precio" min="12500" max="15200" step="0,5" value="12500"
-         onchange="document.getElementById('outprecio').value=value">
-       <output id="outprecio" name="outprecio" for="precio">12500</output>
-       <div>
-         <button class="filter" id="precio">Filtrar</button>
+        <div class="row container p-0 m-0">
+          <div class="col">
+            <p class="font-weight-normal text-right my-2">Rango de precio..</p>
+          </div>
+          <div class="col">
+            <input class="form-control" type="number" placeholder="min." id="rangeFilterCountMin">
+          </div>
+          <div class="col">
+            <input class="form-control" type="number" placeholder="máx." id="rangeFilterCountMax">
+          </div>
+          <div class="col-3 p-0">
+            <div class="btn-group" role="group">
+              <button class="btn btn-light btn-block" id="rangeFilterCount">Filtrar</button>
+              <button class="btn btn-link btn-sm" id="clearRangeFilter">Limpiar</button>
+            </div>
+          </div>
         </div>
       </div>
       <div id="lista"></div>

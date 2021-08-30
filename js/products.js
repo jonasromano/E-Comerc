@@ -8,6 +8,7 @@ var maxCount = undefined;
 
 
 
+
 function mostrarProductos(array){
   let product ="<hr>";
   for(let i = 0; i < array.length; i++){
@@ -21,6 +22,7 @@ function mostrarProductos(array){
   }
   document.getElementById("lista").innerHTML = product;
 }
+
 function mostrarImagenes(){
 
   let imagenes = "";
@@ -54,6 +56,8 @@ function mostrarImagenes(){
 }
 
 
+
+
 document.addEventListener("DOMContentLoaded", function (e) {
 
     getJSONData(PRODUCTS_URL).then(function(resultObj) { 
@@ -67,24 +71,3 @@ document.addEventListener("DOMContentLoaded", function (e) {
     
  });
 
-document.getElementById("precio").addEventListener("click", function(){
-
-        minCount = document.getElementById("precio").value;
-        maxCount = document.getElementById("precio").value;
-
-        if ((minCount != undefined) && (minCount != "") && (parseInt(minCount)) >= 0){
-          minCount = parseInt(minCount);
-      }
-      else{
-          minCount = undefined;
-      }
-
-      if ((maxCount != undefined) && (maxCount != "") && (parseInt(maxCount)) >= 0){
-          maxCount = parseInt(maxCount);
-      }
-      else{
-          maxCount = undefined;
-      }
-     mostrarImagenes();
-    });
- 
