@@ -5,8 +5,6 @@ var productes = [];
 var minCount = undefined;
 var maxCount = undefined;
 
-
-
 function mostrarImagenes(){
 
   let imagenes = "";
@@ -78,3 +76,42 @@ document.getElementById("filtrar").addEventListener("click",function(){
     mostrarImagenes(productes);
   
 });
+
+document.getElementById("limpiar").addEventListener("click", function (){
+  document.getElementById("range-min").value = "";
+  document.getElementById("range-max").value = "";
+
+  minCount = undefined;
+  maxCount = undefined;
+
+  mostrarImagenes(productes);
+})
+
+function sortCategories(criteria, array){
+  let result = [];
+  if (criteria === 1)
+  {
+      result = array.sort(function(a, b) {
+          if ( a.cost < b.cost ){ return -1; }
+          if ( a.cost > b.cost ){ return 1; }
+          return 0;
+      });
+  }else if (criteria === 2){
+      result = array.sort(function(a, b) {
+          if ( a.cost > b.cost ){ return -1; }
+          if ( a.cost < b.cost ){ return 1; }
+          return 0;
+      });
+  }else if (criteria === 3){
+      result = array.sort(function(a, b) {
+          let aCount = parseInt(a.productCount);
+          let bCount = parseInt(b.productCount);
+
+          if ( aCount > bCount ){ return -1; }
+          if ( aCount < bCount ){ return 1; }
+          return 0;
+      });
+  }
+
+  return result;
+}
