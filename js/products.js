@@ -7,30 +7,14 @@ var maxCount = undefined;
 
 
 
-
-
-function mostrarProductos(array){
-  let product ="<hr>";
-  for(let i = 0; i < array.length; i++){
-    let producto = array[i];
-    
-    product += "Nombre:" +producto.name +"<br>";
-    product += "Descripcion:" +producto.description +"<br>";
-    product += "Precio:" + "U$S" +producto.cost + "<br>";
-    product += "Stock:" +producto.soldCount + "<br>";
-
-  }
-  document.getElementById("lista").innerHTML = product;
-}
-
 function mostrarImagenes(){
 
   let imagenes = "";
   for(let i = 0; i < productes.length; i++){
       let img = productes[i];
 
-      if (((minCount == undefined) || (minCount != undefined && parseInt(img.productCount) >= minCount)) &&
-          ((maxCount == undefined) || (maxCount != undefined && parseInt(img.productCount) <= maxCount))){
+      if (((minCount == undefined) || (minCount != undefined && parseInt(img.cost) >= minCount)) &&
+          ((maxCount == undefined) || (maxCount != undefined && parseInt(img.cost) <= maxCount))){
 
           imagenes += `
           <a href="products.html" class="list-group-item list-group-item-action">
@@ -63,7 +47,7 @@ document.addEventListener("DOMContentLoaded", function (e) {
     getJSONData(PRODUCTS_URL).then(function(resultObj) { 
      if (resultObj.status === "ok") {
        productes = resultObj.data;
-       mostrarProductos(productes);
+       
        mostrarImagenes(productes);
      }
       
@@ -71,3 +55,26 @@ document.addEventListener("DOMContentLoaded", function (e) {
     
  });
 
+
+
+document.getElementById("filtrar").addEventListener("click",function(){
+
+  minCount = document.getElementById("range-min").value;
+  maxCount = document.getElementById("range-max").value;
+
+  if ((minCount != undefined) && (minCount != "") && (parseInt(minCount)) >= 0){
+    minCount = parseInt(minCount);
+  }
+  else {
+    minCount = undefined;
+  }
+
+  if ((maxCount != undefined) && (maxCount != "") && (parseInt(maxCount)) >= 0){
+    maxCount = parseInt(maxCount);
+  }
+  else {
+    maxCount = undefined;
+  }
+    mostrarImagenes(productes);
+  
+});
