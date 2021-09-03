@@ -87,31 +87,47 @@ document.getElementById("limpiar").addEventListener("click", function (){
   mostrarImagenes(productes);
 })
 
-function sortCategories(criteria, array){
-  let result = [];
-  if (criteria === 1)
-  {
-      result = array.sort(function(a, b) {
-          if ( a.cost < b.cost ){ return -1; }
-          if ( a.cost > b.cost ){ return 1; }
-          return 0;
-      });
-  }else if (criteria === 2){
-      result = array.sort(function(a, b) {
-          if ( a.cost > b.cost ){ return -1; }
-          if ( a.cost < b.cost ){ return 1; }
-          return 0;
-      });
-  }else if (criteria === 3){
-      result = array.sort(function(a, b) {
-          let aCount = parseInt(a.productCount);
-          let bCount = parseInt(b.productCount);
-
-          if ( aCount > bCount ){ return -1; }
-          if ( aCount < bCount ){ return 1; }
-          return 0;
-      });
-  }
-
-  return result;
+function sortProduct(array){
+  return array.sort(
+    function(a,b){
+      if(a.cost < b.cost){return -1 ;}
+      if(a.cost > b.cost){return 1 ;}
+      return 0;
+    }
+  )
 }
+
+function sortProductdsc(array){
+  return array.sort(
+    function (a,b){
+      if(b.cost > a.cost){return 1;}
+      if(b.cost < a.cost){return -1;}
+      return 0;
+    }
+  )
+}
+function sortRelevancia(array){
+  return array.sort(
+    function (a,b){
+      if(a.name < b.name){return -1;}
+      if(a.name > b.name){return 1;}
+      return 0;
+    }
+  )
+}
+
+document.addEventListener("DOMContentLoaded", function () {
+  document.getElementById("asc").addEventListener("click", function(){
+    productes = sortProduct(productes);
+    mostrarImagenes(productes);
+  })
+
+  document.getElementById("dsc").addEventListener("click", function(){
+    productes = sortProductdsc(productes);
+    mostrarImagenes(productes);
+  })
+  document.getElementById("relevancia").addEventListener("click",function(){
+    productes = sortRelevancia(productes);
+    mostrarImagenes(productes);
+  })
+});
