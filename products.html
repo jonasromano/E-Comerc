@@ -12,6 +12,23 @@
     <link href="css/font-awesome.min.css" rel="stylesheet">
     <link href="css/bootstrap.min.css" rel="stylesheet">
     <link href="css/styles.css" rel="stylesheet">
+    <style>
+    button{
+      text-decoration:none;
+      font-weight: 600;
+      font-size: 10px;
+      color:#ffffff;
+      padding-top:15px;
+      padding-bottom:15px;
+      padding-left:20px;
+      padding-right:20px;
+      background-color:#048372;
+      border-color: #F69DA1;
+      border-width: 3px;
+      border-style: solid;
+      }
+      
+      </style>
   </head>
   <body>
     <nav class="site-header sticky-top py-1 bg-dark">
@@ -23,9 +40,10 @@
         <a class="py-2 d-none d-md-inline-block" href="cart.html">Mi carrito</a>
       </div>
     </nav>
-    <div class="container p-5">
+    <div class="container p-4">
       <div class="filter">
         <div class="row container p-0 m-0">
+          <div class="col text-right">
           <div class="col">
             <button id="asc">Precio Ascendiente</button>
             <button id="dsc">Precio Descendiente</button>
@@ -46,6 +64,7 @@
               <button id="limpiar">Limpiar</button>
             </div>
           </div>
+        </div>
         </div>
       </div>
       <div id="lista"></div>

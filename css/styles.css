@@ -147,8 +147,3 @@ body{
 background: -webkit-radial-gradient(rgb(40, 40, 138),pink);
 }
 
-button{
-  background-color: rgb(233, 233, 221);
-  font-size: 95%;
-  background-position: top;
-}
