@@ -4,10 +4,17 @@
 
 document.addEventListener("DOMContentLoaded", function(e){
    document.getElementById("submitBtn");("click", function(){
+       let Nombre = document.getElementById("Nombre");
        let Contraseña = document.getElementById("Contraseña");
        let Correo = document.getElementById("Correo");
        let camposCompletos = true; 
-       
+
+       if(Nombre.value === " "){
+           Nombre.classList.add("inavalid");
+           camposCompletos = false;
+       }else{
+           Nombre.classList.remove("invalid");
+       }
        if(Contraseña.value === " "){
            Contraseña.classList.add("invalid");
            camposCompletos = false;
@@ -24,7 +31,7 @@ document.addEventListener("DOMContentLoaded", function(e){
            getJSONData().then(function(resultado){
                if(resultado.status === "ok"){
                    usersArray = resultado.data;
-                   if(validateUser(usersArray,Contraseña.value,Correo.value)){
+                   if(validateUser(usersArray,Nombre.value,Contraseña.value,Correo.value)){
                        window.location = 'index.html';
                    }else{
                        alert("Usuario o contraseña incorrectas!");

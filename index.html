@@ -17,8 +17,9 @@
     
     function estorage(){
         let misDatos= {
-            dato1: document.getElementById('Contraseña').value,
-            dato2: document.getElementById('Correo electronico').value
+            dato1: document.getElementById('Nombre').value,
+            dato2: document.getElementById('Contraseña').value,
+            dato3: document.getElementById('Correo electronico').value
         };
 
         let elJson= JSON.stringify(misDatos);
@@ -77,6 +78,8 @@ input{
         <h1>Registrate</h1>
         <br>
       <form action="inicio.html">
+          <label for="Nombre">Nombre</label>
+          <input type="text" id="Nombre" placeholder="Nombre" name="Nombre"required><br><br>
           <label for="Contraseña">Contraseña</label>
           <input type="text" id="Contraseña" placeholder="Contraseña" name="Contraseña"required><br><br>
           <label for="Correo">Correo electronico</label>
