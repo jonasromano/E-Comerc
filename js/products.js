@@ -131,3 +131,40 @@ document.addEventListener("DOMContentLoaded", function () {
     mostrarImagenes(productes);
   })
 });
+
+function mostrar(productes){
+  let imagenes ="";
+  for(let i = 0; i < productes.length; i++){
+
+    let img = productes[i];
+    if(img.name.toLowerCase().includes(buscar)){
+      imagenes += `
+          <a href="products.html" class="list-group-item list-group-item-action">
+              <div class="row">
+                  <div class="col-3">
+                      <img src="` + img.imgSrc + `" alt="` + img.description + `" class="img-thumbnail">
+                  </div>
+                  <div class="col">
+                      <div class="d-flex w-100 justify-content-between">
+                          <h4 class="mb-1">`+ img.name +`</h4>
+                          <small class="text-muted">` + img.soldCount +` artículos</small><br>
+                          <big class="text-muted">` + "U$S" + img.cost + `</big>
+                      </div>
+                      <p class="mb-1">` + img.description + `</p>
+                  </div>
+              </div>
+          </a>
+          `
+    }
+    document.getElementById("lista").innerHTML = imagenes
+  }
+}
+document.addEventListener("DOMContentLoaded", function () {
+  document.getElementById("buscar").addEventListener('input', function () {
+
+      buscar = document.getElementById("buscar").value.toLowerCase();
+
+      mostrar(productes);
+
+  });
+  });

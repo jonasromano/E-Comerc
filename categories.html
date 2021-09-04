@@ -13,6 +13,23 @@
 
     <link href="css/bootstrap.min.css" rel="stylesheet">
     <link href="css/styles.css" rel="stylesheet">
+    <style>
+      button{
+        text-decoration:none;
+        font-weight: 600;
+        font-size: 10px;
+        color:#ffffff;
+        padding-top:15px;
+        padding-bottom:15px;
+        padding-left:20px;
+        padding-right:20px;
+        background-color:#048372;
+        border-color: #F69DA1;
+        border-width: 3px;
+        border-style: solid;
+        }
+        
+        </style>
   </head>
   <body>
     <nav class="site-header sticky-top py-1 bg-dark">
@@ -33,16 +50,10 @@
             <div class="filter">
               <div class="row container p-0 m-0">
                 <div class="col text-right">
-                    <div class="btn-group btn-group-toggle mb-4" data-toggle="buttons">
-                        <label class="btn btn-light active" id="sortAsc" >
-                            <input type="radio" name="options" autocomplete="off" checked>A-Z
-                        </label>
-                        <label class="btn btn-light" id="sortDesc" >
-                            <input type="radio" name="options" autocomplete="off">Z-A
-                        </label>
-                        <label class="btn btn-light" id="sortByCount" >
-                            <input type="radio" name="options" autocomplete="off"><i class="fas fa-sort-amount-down mr-1"></i>Cant.
-                        </label>
+                    <div class="col">
+                      <button id="sortAsc" autocomplete="off">A-Z</button>
+                      <button id="sortDesc" autocomplete="off">Z-A</button>
+                      <button id="sortByCount" autocomplete="off"><i class="fas fa-sort-amount-down mr-1"></i>Cant.</button>
                     </div>
                 </div>
               </div>
@@ -62,8 +73,8 @@
                     </div>
                     <div class="col-3 p-0">
                       <div class="btn-group" role="group">
-                        <button class="btn btn-light btn-block" id="rangeFilterCount">Filtrar</button>
-                        <button class="btn btn-link btn-sm" id="clearRangeFilter">Limpiar</button>
+                        <button id="rangeFilterCount">Filtrar</button>
+                        <button id="clearRangeFilter">Limpiar</button>
                       </div>
                     </div>
                   </div>
