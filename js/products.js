@@ -15,7 +15,7 @@ function mostrarImagenes(){
           ((maxCount == undefined) || (maxCount != undefined && parseInt(img.cost) <= maxCount))){
 
           imagenes += `
-          <a href="products.html" class="list-group-item list-group-item-action">
+          <a href="products-info.html" class="list-group-item list-group-item-action">
               <div class="row">
                   <div class="col-3">
                       <img src="` + img.imgSrc + `" alt="` + img.description + `" class="img-thumbnail">
@@ -168,3 +168,6 @@ document.addEventListener("DOMContentLoaded", function () {
 
   });
   });
+
+  
+
