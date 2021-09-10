@@ -1,31 +1,31 @@
 //Función que se ejecuta una vez que se haya lanzado el evento de
 //que el documento se encuentra cargado, es decir, se encuentran todos los
 //elementos HTML presentes.
-var product = [];
+var infe = [];
+var infop = [];
+var img =[];
 
-function infoProductes(product){
+function infoProductes(infe){
 
-    let infop = "<hr>";
-    for(let i = 0; i < product.length; i++){
-        let inf = product[i];
-        {
-        infop +=
-      infop += "Nombre:" +inf.nombre +"<br>";
-      infop += "Descripcion:" +inf.description +"<br>";
-      infop += "Precio:" + "U$S" +inf.costo + "<br>";
-      infop += "Stock:" +inf.soldCount + "<br>";
-      infop += "Categoria:" +inf.categoría + "<br>";
+   let infop = "";
+   let img = "";
 
-   }
+   infop +=`
+   ${infe.nombre}<br>
+   ${infe.description}<br>
+   ${infe.costo}<br>
+   ${infe.soldCount}
+   ${infe.categoria}<br>
+   `;
+
    document.getElementById("infopr").innerHTML = infop;
-}
-}
-
+   document.getElementById("infopr").innerHTML = img;
+ }
 document.addEventListener("DOMContentLoaded", function(e){
     getJSONData(PRODUCT_INFO_URL).then(function(resultObj) {
         if (resultObj.status === "ok"){
             product = resultObj.data;
-        infoProductes(product);
+        infoProductes(infe);
         }
     });
 
