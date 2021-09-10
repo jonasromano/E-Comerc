@@ -1,32 +1,37 @@
 //Función que se ejecuta una vez que se haya lanzado el evento de
 //que el documento se encuentra cargado, es decir, se encuentran todos los
 //elementos HTML presentes.
-var infe = [];
-var infop = [];
-var img =[];
+function verInfo(name){
+    localStorage.setItem("producto",JSON.stringify({imgname}));
+    window.location = "product-info.html";
+}
+function mostrarInfo(array){
 
-function infoProductes(infe){
+    let information = "";
+    for(let i = 0; i < array.length; i++){
+        let img = array[i];
 
-   let infop = "";
-   let img = "";
+    }
+    information += "Nombre:"+img.name+"<br>";
+    information += "Descripcion:"+img.description+"<br>";
+    information += "Precio:"+"USD"+img.costo+"<br>";
+    information += "Stock:"+img.soldCount+"<br>";
+    information += "Categoria:"+img.categoría+"<br>";
+    information += "Productos Relacionados:"+img.productosRelacionados+"<br>";
+     information += `<button style="float :right;" onclick="Mas Info(`+ img.name +`)">Mas Info</button><br>`
+}
+document.getElementById("infopr").innerHTML= information;
 
-   infop +=`
-   ${infe.nombre}<br>
-   ${infe.description}<br>
-   ${infe.costo}<br>
-   ${infe.soldCount}
-   ${infe.categoria}<br>
-   `;
 
-   document.getElementById("infopr").innerHTML = infop;
-   document.getElementById("infopr").innerHTML = img;
- }
-document.addEventListener("DOMContentLoaded", function(e){
-    getJSONData(PRODUCT_INFO_URL).then(function(resultObj) {
-        if (resultObj.status === "ok"){
-            product = resultObj.data;
-        infoProductes(infe);
-        }
+document.addEventListener("DOMContentLoaded", function (e) {
+
+    getJSONData(PRODUCT_INFO_URL).then(function(resultObj) { 
+     if (resultObj.status === "ok") {
+       productes = resultObj.data;
+       
+       mostrarInfo(array);
+     }
+      
     });
-
-});
+    
+ });
