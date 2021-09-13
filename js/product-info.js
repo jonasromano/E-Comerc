@@ -33,11 +33,13 @@ document.addEventListener("DOMContentLoaded", function (e) {
        let descriptionHTML = document.getElementById("description");
        let soldCountHTML = document.getElementById("soldCount");
        let informationCostHTML = document.getElementById("informationCost");
+       let informationCategoryHTML = document.getElementById("informationCategory")
    
        informationNameHTML.innerHTML = information.name;
        descriptionHTML.innerHTML = information.description;
-       soldCountHTML.innerHTML = information.soldCount;
-       informationCostHTML.innerHTML = information.cost;
+       soldCountHTML.innerHTML = information.soldCount+" "+"unidades disponibles";
+       informationCostHTML.innerHTML = "USD"+" "+ information.cost;
+       informationCategoryHTML.innerHTML = information.category;
      }
      mostrarInfo(information.images);
     });
