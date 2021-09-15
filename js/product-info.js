@@ -45,3 +45,29 @@ document.addEventListener("DOMContentLoaded", function (e) {
     });
     
  });
+
+ var comments = [];
+
+ function mostrarComents(array){
+   let comentario = "";
+   for(let i = 0 ; i < array.length; i++){
+    let  comment = array[i];
+
+    comentario +=`
+    <div>`+comment.score+`</div><br>
+    <p>`+comment.description+`</p><br>
+    <p>`+comment.user+`</p><br>
+    <p>`+comment.dateTime+`</p><br>
+    `
+ }
+ document.getElementById("coments").innerHTML= comentario;
+}
+
+document.addEventListener("DOMContentLoaded",function(e){
+  getJSONData(PRODUCT_INFO_COMMENTS_URL).then(function(resultObj){
+    if(resultObj.status === "ok"){
+      comments = resultObj.data;
+    }
+    mostrarComents(comments);
+  })
+})
