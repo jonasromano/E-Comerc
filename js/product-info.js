@@ -54,10 +54,12 @@ document.addEventListener("DOMContentLoaded", function (e) {
     let  comment = array[i];
 
     comentario +=`
-    <div>`+comment.score+`</div><br>
-    <p>`+comment.description+`</p><br>
-    <p>`+comment.user+`</p><br>
-    <p>`+comment.dateTime+`</p><br>
+    <div class="fa fa-star checked">`+comment.score+`</div>
+    <div class="row container p-2 m-3">
+    <p id="x"class="row container p-2 m-3">`+comment.description+`</p></div>
+    <p> USUARIO :`+comment.user+` <br> <div class="col text-right">Fecha: `+comment.dateTime+`</div></p>
+    </div>
+    <hr>
     `
  }
  document.getElementById("coments").innerHTML= comentario;
