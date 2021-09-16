@@ -84,7 +84,7 @@ function rating(){
 }
 
 document.addEventListener("DOMContentLoaded", function(e){
-  document.getElementById("stars").innerHTML=`
+  document.getElementById("s").innerHTML=`
   <div class="star-rating">
     <input id="star-5" type="radio" name="rating" value="5" />
     <label for="star-5" title="5 stars">
