@@ -140,15 +140,15 @@ a.custom-card:hover {
 }
 
 body{
-  background: -webkit-linear-gradient(bottom left, #ffd000 ,red );
+  background: -webkit-linear-gradient(bottom left,pink,white );
 }
 
 .container{
-background: -webkit-radial-gradient(rgb(40, 40, 138),pink);
+background: -webkit-radial-gradient(rgb(31, 31, 240),pink);
 }
 
 .container #coments{
-  background: rgb(137, 253, 255);
+  background: rgb(8, 247, 255);
 }
 
 .container #x{
