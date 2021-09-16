@@ -148,9 +148,13 @@ background: -webkit-radial-gradient(rgb(31, 31, 240),pink);
 }
 
 .container #coments{
-  background: rgb(8, 247, 255);
+  background: rgb(255, 247, 247);
 }
 
 .container #x{
 background: floralwhite;
+}
+
+.container #y{
+  background: black;
 }
