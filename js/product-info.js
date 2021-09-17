@@ -74,42 +74,19 @@ document.addEventListener("DOMContentLoaded",function(e){
   })
 })
 
-function rating(){
-  var comment = document.getElementsByName("rating");
-  for(var i = 0;i< comment.length; i++){
-    if(comment[i].checked){
-      return parseInt(comment[i].value);
-    }
-  }
+function comentario(){
+  let comenttario = {
+    dato : document.getElementById('comentario').value
+  };
+  let elComent = JSON.stringify(comenttario);
+  localStorage.setItem('comm', elComent);
+
 }
 
-document.addEventListener("DOMContentLoaded", function(e){
-  document.getElementById("s").innerHTML=`
-  <div class="star-rating">
-    <input id="star-5" type="radio" name="rating" value="5" />
-    <label for="star-5" title="5 stars">
-    <i class="active fa fa-star"></i>
-    </label>
-
-    <input id="star-4" type="radio" name="rating" value="4" />
-    <label for="star-4" title="4 stars">
-    <i class="active fa fa-star"></i>
-    </label>
-
-    <input id="star-3" type="radio" name="rating" value="3" />
-    <label for="star-3" title="3 stars">
-    <i class="active fa fa-star"></i>
-    </label>
-
-    <input id="star-2" type="radio" name="rating" value="2" />
-    <label for="star-2" title="2 stars">
-    <i class="active fa fa-star"></i>
-    </label>
-
-    <input id="star-1" type="radio" name="rating" value="1" />
-    <label for="star-1" title="1 stars">
-    <i class="active fa fa-star"></i>
-    </label>
-  </div>
-  `
-})
+function nuevoComentario(){
+  if(localStorage.getItem('comm')){
+    elComent=localStorage.getItem('comm');
+    comm = JSON.parse(elComent);
+    document.getElementById('coments').innerHTML=comm;
+  }
+}

@@ -54,39 +54,30 @@
           </div>
         </dd>
         </dl>
-        <div id="coments" class="container">
+        <div id="coments" class="container" onclick="nuevoComentario()">
         </div>
          <form action="coments">
            <textarea name="textarea" id="comentario" cols="50" rows="5">
              Escribe un comentario...
            </textarea>
-           <button id="Enviar">Enviar</button>
-           <div id="s"class="star-rating">
-            <input id="star-5" type="radio" name="rating" value="5" />
-            <label for="star-5" title="5 stars">
+           <button id="Enviar" onclick="comentario()">Enviar</button>
+           <div class="star-rating">
+             <button id="n">
             <i class="active fa fa-star"></i>
-            </label>
-        
-            <input id="star-4" type="radio" name="rating" value="4" />
-            <label for="star-4" title="4 stars">
+          </button>
+          <button id="n">
             <i class="active fa fa-star"></i>
-            </label>
-        
-            <input id="star-3" type="radio" name="rating" value="3" />
-            <label for="star-3" title="3 stars">
+          </button>
+          <button id="n">
             <i class="active fa fa-star"></i>
-            </label>
-        
-            <input id="star-2" type="radio" name="rating" value="2" />
-            <label for="star-2" title="2 stars">
+          </button>
+          <button id="n">
             <i class="active fa fa-star"></i>
-            </label>
-        
-            <input id="star-1" type="radio" name="rating" value="1" />
-            <label for="star-1" title="1 stars">
+          </button>
+          <button id="n" >
             <i class="active fa fa-star"></i>
-            </label>
-          </div>
+          </button>
+           </div>
          </form>
   </div>
   <footer class="text-muted">
