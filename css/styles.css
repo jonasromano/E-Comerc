@@ -158,8 +158,6 @@ background: floralwhite;
 .container #y{
   background: black;
 }
-
-
-.n{
-  background-color: orange;
+.checked {
+  color: orange;
 }
