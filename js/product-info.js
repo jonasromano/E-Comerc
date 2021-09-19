@@ -63,6 +63,7 @@ document.addEventListener("DOMContentLoaded", function (e) {
     `
  }
  document.getElementById("coments").innerHTML= comentario;
+
 }
 
 document.addEventListener("DOMContentLoaded",function(e){
@@ -74,9 +75,10 @@ document.addEventListener("DOMContentLoaded",function(e){
   })
 })
 
+
 function estrellitas(){
   var elements = document.getElementsByName("rating");
-  for(var i=0;i<elements.length;i++){
+  for(var i=0;i<elements.lentgth ;i++){
     if(elements[i].checked){
       return parseInt(elements[i].value);
     }
@@ -85,7 +87,7 @@ function estrellitas(){
 
 document.addEventListener("DOMContentLoaded", function(e){
   document.getElementById("stars").innerHTML= `
-  <div class="star-rating">
+  <div id="stars" class="star-rating">
   <input id="star-5" type="radio" name="rating" value="5" />
   <label for="star-5" title="5 stars">
     <i class="active fa fa-star"></i>
@@ -114,4 +116,6 @@ document.addEventListener("DOMContentLoaded", function(e){
   `;
 });
 
-    
+let newcoment ={
+  
+}
