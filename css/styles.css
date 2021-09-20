@@ -162,3 +162,26 @@ background: floralwhite;
   color: orange;
 }
 
+.star-rating {
+  position: relative;
+  overflow: hidden;
+  display: inline-block;
+}
+
+.star-rating input {
+  position: absolute;
+  top: -100px;
+}
+
+
+.star-rating label {
+  float: right;
+  color: #000000;
+  font-size: 30px; 
+}
+
+.star-rating label:hover,
+.star-rating label:hover ~ label,
+.star-rating input:checked ~ label {
+  color: #ffff00;
+}

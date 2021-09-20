@@ -108,7 +108,7 @@ document.addEventListener("DOMContentLoaded", function(e){
     <i class="active fa fa-star"></i>
   </label>
 
-  <input id="star-1" type="radio" name="rating" value="1" />
+  <input id="star-1" type="radio" name="rating" value="1"  />
   <label for="star-1" title="1 stars">
     <i class="active fa fa-star"></i>
   </label>
