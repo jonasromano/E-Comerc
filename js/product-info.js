@@ -116,6 +116,13 @@ document.addEventListener("DOMContentLoaded", function(e){
   `;
 });
 
+function newComentario(){
 let newcoment ={
-  
-}
+  score: getRating(),
+  description: document.getElementById('comentario').value,
+  usuario: JSON.parse(localStorage.getItem('losDatos')).email
+};
+newComentario.push(newcoment);
+mostrarComents(comments, newComentario);
+document.getElementById('comentario').value= "";
+ }
