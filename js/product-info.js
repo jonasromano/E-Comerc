@@ -20,6 +20,50 @@ function mostrarInfo(array){
   document.getElementById("img").innerHTML= infop;
 
 }
+var productes = [];
+function mostrarImagenes(){
+
+  let imagenes = "";
+  for(let i = 0; i < productes.length; i){
+      let img = productes[2];
+
+          imagenes += `
+          <a href="product-info.html" class="list-group-item list-group-item-action">
+              <div class="row">
+                  <div class="col-3">
+                      <img src="` + img.imgSrc + `" alt="` + img.description + `" class="img-thumbnail">
+                  </div>
+                  <div class="col">
+                      <div class="d-flex w-100 justify-content-between">
+                          <h4 class="mb-1">`+ img.name +`</h4>
+                          <small class="text-muted">` + img.soldCount +` artículos</small><br>
+                          <big class="text-muted">` + "U$S" + img.cost + `</big>
+                      </div>
+                      <p class="mb-1">` + img.description + `</p>
+                  </div>
+              </div>
+          </a>
+          `
+
+      document.getElementById("relatedProduct").innerHTML = imagenes;
+  }
+}
+
+
+document.addEventListener("DOMContentLoaded", function (e) {
+
+    getJSONData(PRODUCTS_URL).then(function(resultObj) { 
+     if (resultObj.status === "ok") {
+       productes = resultObj.data;
+       
+       mostrarImagenes(productes);
+     }
+      
+    });
+    
+ });
+
+
 
 
 
@@ -33,15 +77,19 @@ document.addEventListener("DOMContentLoaded", function (e) {
        let descriptionHTML = document.getElementById("description");
        let soldCountHTML = document.getElementById("soldCount");
        let informationCostHTML = document.getElementById("informationCost");
-       let informationCategoryHTML = document.getElementById("informationCategory")
+       let informationCategoryHTML = document.getElementById("informationCategory");
+       let relatedProductHTML = document.getElementById("relatedProduct");
    
        informationNameHTML.innerHTML = information.name;
        descriptionHTML.innerHTML = information.description;
        soldCountHTML.innerHTML = information.soldCount+" "+"unidades disponibles";
        informationCostHTML.innerHTML = "USD"+" "+ information.cost;
        informationCategoryHTML.innerHTML = information.category;
-     }
+       relatedProductHTML.innerHTML = information.relatedProduct;
+       
+      }
      mostrarInfo(information.images);
+     mostrarImagenes(information.relatedProduct);
     });
     
  });
@@ -116,13 +164,3 @@ document.addEventListener("DOMContentLoaded", function(e){
   `;
 });
 
-function newComentario(){
-let newcoment ={
-  score: getRating(),
-  description: document.getElementById('comentario').value,
-  usuario: JSON.parse(localStorage.getItem('losDatos')).email
-};
-newComentario.push(newcoment);
-mostrarComents(comments, newComentario);
-document.getElementById('comentario').value= "";
- }
