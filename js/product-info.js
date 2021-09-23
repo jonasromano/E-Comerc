@@ -24,8 +24,9 @@ var productes = [];
 function mostrarImagenes(){
 
   let imagenes = "";
-  for(let i = 0; i < productes.length; i){
-      let img = productes[2];
+  for(let i = 0; i < productes.length; i++){
+      let img = productes[i];{
+        
 
           imagenes += `
           <a href="product-info.html" class="list-group-item list-group-item-action">
@@ -36,15 +37,14 @@ function mostrarImagenes(){
                   <div class="col">
                       <div class="d-flex w-100 justify-content-between">
                           <h4 class="mb-1">`+ img.name +`</h4>
-                          <small class="text-muted">` + img.soldCount +` artículos</small><br>
+                          
                           <big class="text-muted">` + "U$S" + img.cost + `</big>
                       </div>
-                      <p class="mb-1">` + img.description + `</p>
                   </div>
               </div>
           </a>
           `
-
+        }
       document.getElementById("relatedProduct").innerHTML = imagenes;
   }
 }
