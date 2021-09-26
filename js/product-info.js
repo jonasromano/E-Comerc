@@ -31,14 +31,13 @@ function mostrarImagenes(){
           imagenes += `
           <a href="product-info.html" class="list-group-item list-group-item-action">
               <div class="row">
-                  <div class="col-3">
+                  <div class="col-1">
                       <img src="` + img.imgSrc + `" alt="` + img.description + `" class="img-thumbnail">
                   </div>
-                  <div class="col">
+                  <div class="col text-left">
                       <div class="d-flex w-100 justify-content-between">
                           <h4 class="mb-1">`+ img.name +`</h4>
-                          
-                          <big class="text-muted">` + "U$S" + img.cost + `</big>
+                           ` + "U$S" + img.cost + `
                       </div>
                   </div>
               </div>
@@ -78,14 +77,14 @@ document.addEventListener("DOMContentLoaded", function (e) {
        let soldCountHTML = document.getElementById("soldCount");
        let informationCostHTML = document.getElementById("informationCost");
        let informationCategoryHTML = document.getElementById("informationCategory");
-       let relatedProductHTML = document.getElementById("relatedProduct");
+       
    
        informationNameHTML.innerHTML = information.name;
        descriptionHTML.innerHTML = information.description;
        soldCountHTML.innerHTML = information.soldCount+" "+"unidades disponibles";
        informationCostHTML.innerHTML = "USD"+" "+ information.cost;
        informationCategoryHTML.innerHTML = information.category;
-       relatedProductHTML.innerHTML = information.relatedProduct;
+       
        
       }
      mostrarInfo(information.images);
