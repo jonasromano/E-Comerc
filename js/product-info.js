@@ -21,12 +21,13 @@ function mostrarInfo(array){
 
 }
 var productes = [];
+var relatedProduct = undefined;
 function mostrarImagenes(){
 
   let imagenes = "";
   for(let i = 0; i < productes.length; i++){
       let img = productes[i];{
-        
+        if(((relatedProduct == undefined) || (relatedProduct != undefined && parseInt(img.relatedProduct) >= relatedProduct))) {
 
           imagenes += `
           <a href="product-info.html" class="list-group-item list-group-item-action">
@@ -46,6 +47,7 @@ function mostrarImagenes(){
         }
       document.getElementById("relatedProduct").innerHTML = imagenes;
   }
+ }
 }
 
 
@@ -61,7 +63,25 @@ document.addEventListener("DOMContentLoaded", function (e) {
     });
     
  });
+ document.getElementById("DOMContentLoaded", function (e){
+  getJSONData(PRODUCTS_URL).then(function(resultObj) { 
+    if (resultObj.status === "ok") {
+      productes = resultObj.data;
+   
 
+  relatedProduct = document.getElementById("relatedProduct").value;
+ 
+
+  if ((relatedProduct != undefined) && (relatedProduct != "") && (parseInt(relatedProduct)) >= 0){
+    relatedProduct = parseInt(relatedProduct);
+  }
+  else {
+    relatedProduct = undefined;
+  }
+    mostrarImagenes(productes);
+ }
+});
+});
 
 
 
@@ -163,3 +183,13 @@ document.addEventListener("DOMContentLoaded", function(e){
   `;
 });
 
+function newComentario(){
+  let newcoment ={
+    score: getRating(),
+    description: document.getElementById('comentario').value,
+    usuario: JSON.parse(localStorage.getItem('losDatos')).email
+  };
+  newComentario.push(newcoment);
+  mostrarComents(comments, newComentario);
+  document.getElementById('comentario').value= "";
+   }
