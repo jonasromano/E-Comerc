@@ -10,7 +10,7 @@ document.addEventListener("DOMContentLoaded", function(e){
        let camposCompletos = true; 
 
        if(Nombre.value === " "){
-           Nombre.classList.add("inavalid");
+           Nombre.classList.add("invalid");
            camposCompletos = false;
        }else{
            Nombre.classList.remove("invalid");
