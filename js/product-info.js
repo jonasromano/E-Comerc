@@ -16,10 +16,39 @@ function mostrarInfo(array){
             </div>
         </div>
         `
+
   }
   document.getElementById("img").innerHTML= infop;
 
 }
+var productes=[];
+function related(array){
+  let relacionado ="";
+  for(let i = 0 ; i<productes.length;i++){
+    let producto = productes[i];{
+
+    }
+    relacionado +=`
+    <div class="row">
+    `+producto.relatedProducts+`
+    </div>
+    `
+  }
+  document.getElementById("relatedProducts").innerHTML= relacionado;
+  
+}
+document.addEventListener("DOMContentLoaded", function (e) {
+
+  getJSONData(PRODUCTS_URL).then(function(resultObj) { 
+   if (resultObj.status === "ok") {
+     productes = resultObj.data;
+     
+     related(productes);
+   }
+    
+  });
+  
+});
 
 
 document.addEventListener("DOMContentLoaded", function (e) {
@@ -33,6 +62,7 @@ document.addEventListener("DOMContentLoaded", function (e) {
        let soldCountHTML = document.getElementById("soldCount");
        let informationCostHTML = document.getElementById("informationCost");
        let informationCategoryHTML = document.getElementById("informationCategory");
+       let relatedProductsHTML= document.getElementById("relatedProducts");
        
    
        informationNameHTML.innerHTML = information.name;
@@ -40,10 +70,12 @@ document.addEventListener("DOMContentLoaded", function (e) {
        soldCountHTML.innerHTML = information.soldCount+" "+"unidades disponibles";
        informationCostHTML.innerHTML = "USD"+" "+ information.cost;
        informationCategoryHTML.innerHTML = information.category;
+       relatedProductsHTML.innerHTML = information.relatedProducts;
        
        
       }
      mostrarInfo(information.images);
+     related(information.relatedProducts);
     });
     
  });
