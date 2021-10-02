@@ -19,36 +19,49 @@ function mostrarInfo(array){
 
   }
   document.getElementById("img").innerHTML= infop;
-
 }
-var productes=[];
-function related(array){
-  let relacionado ="";
-  for(let i = 0 ; i<productes.length;i++){
-    let producto = productes[i];{
+let productes = [];
+ function result(productes){
+   let related ="";
+   for(let i = 0; i < productes.length; i++){
+     let pr = productes[i];
+       if(relatedProducts === pr){
+         return related;
+       }
+       related +=`
+       <a href="product-info.html" class="list-group-item list-group-item-action">
+           <div class="row">
+               <div class="col-3">
+                   <img src="` + pr.imgSrc + `" alt="` + pr.description + `" class="img-thumbnail">
+               </div>
+               <div class="col">
+                   <div class="d-flex w-100 justify-content-between">
+                       <h4 class="mb-1">`+ pr.name +`</h4>
+                       <big class="text-muted">` + "U$S" + pr.cost + `</big>
+                   </div>
+               </div>
+           </div>
+       </a>
+       `
+     }
+   
+   document.getElementById("relatedProducts").innerHTML= related;
+ };
 
-    }
-    relacionado +=`
-    <div class="row">
-    `+producto.relatedProducts+`
-    </div>
-    `
-  }
-  document.getElementById("relatedProducts").innerHTML= relacionado;
-  
-}
-document.addEventListener("DOMContentLoaded", function (e) {
+ document.addEventListener("DOMContentLoaded", function (e) {
 
   getJSONData(PRODUCTS_URL).then(function(resultObj) { 
    if (resultObj.status === "ok") {
      productes = resultObj.data;
      
-     related(productes);
+     result(productes);
    }
     
   });
   
 });
+
+
 
 
 document.addEventListener("DOMContentLoaded", function (e) {
@@ -75,7 +88,7 @@ document.addEventListener("DOMContentLoaded", function (e) {
        
       }
      mostrarInfo(information.images);
-     related(information.relatedProducts);
+     result(information.relatedProducts);
     });
     
  });
