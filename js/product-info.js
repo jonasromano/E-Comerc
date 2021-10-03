@@ -20,14 +20,14 @@ function mostrarInfo(array){
   }
   document.getElementById("img").innerHTML= infop;
 }
-let productes = [];
- function result(productes){
+var productes = [];
+var relatedProducts = undefined;
+ function result(){
    let related ="";
-   for(let i = 0; i < productes.length; i++){
+   for(let i = 0 ; i < productes.length; i++){
      let pr = productes[i];
-       if(relatedProducts === pr){
-         return related;
-       }
+     if (((relatedProducts == undefined) || (relatedProducts != undefined && parseInt(pr.relatedProducts) >= relatedProducts))){
+       
        related +=`
        <a href="product-info.html" class="list-group-item list-group-item-action">
            <div class="row">
@@ -46,6 +46,7 @@ let productes = [];
      }
    
    document.getElementById("relatedProducts").innerHTML= related;
+   }
  };
 
  document.addEventListener("DOMContentLoaded", function (e) {
