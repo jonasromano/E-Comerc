@@ -26,7 +26,7 @@ var relatedProducts = undefined;
    let related ="";
    for(let i = 0 ; i < productes.length; i++){
      let pr = productes[i];
-     if (((relatedProducts == undefined) || (relatedProducts != undefined && parseInt(pr.relatedProducts) >= relatedProducts))){
+     if (((relatedProducts == productes) || (relatedProducts != productes && parseInt(pr.relatedProducts) >= relatedProducts))){
        
        related +=`
        <a href="product-info.html" class="list-group-item list-group-item-action">
@@ -45,7 +45,7 @@ var relatedProducts = undefined;
        `
      }
    
-   document.getElementById("relatedProducts").innerHTML= related;
+   document.getElementById("related").innerHTML= related;
    }
  };
 
@@ -59,6 +59,19 @@ var relatedProducts = undefined;
    }
     
   });
+  
+});
+document.getElementById("related").addEventListener("click",function(){
+
+  relatedProducts = document.getElementById("related").value;
+
+  if ((relatedProducts != productes) && (relatedProducts != "productes") && (parseInt(relatedProducts)) >= 0){
+    relatedProducts = parseInt(relatedProducts);
+  }
+  else {
+    relatedProducts = productes;
+  }
+    result(productes);
   
 });
 
@@ -76,7 +89,7 @@ document.addEventListener("DOMContentLoaded", function (e) {
        let soldCountHTML = document.getElementById("soldCount");
        let informationCostHTML = document.getElementById("informationCost");
        let informationCategoryHTML = document.getElementById("informationCategory");
-       let relatedProductsHTML= document.getElementById("relatedProducts");
+       let relatedProductsHTML= document.getElementById("related");
        
    
        informationNameHTML.innerHTML = information.name;
