@@ -23,13 +23,13 @@ function mostrarInfo(array){
 var productes = [];
  function result(){
    let related ="";
-   for(let i = 0 ; i < productes.length; i++){
-     let pr = productes[i];
-     if(productes=== "relatedProducts"){
+   {
+     let pr = productes[1];
+     let pr1 = productes[3];
        related +=`
        <a href="product-info.html"class="list-group-item list-group-item-action">
            <div class="row">
-               <div class="col-3">
+               <div class="col-1">
                    <img src="` + pr.imgSrc + `" alt="` + pr.description + `" class="img-thumbnail">
                </div>
                <div class="col">
@@ -40,12 +40,24 @@ var productes = [];
                </div>
            </div>
        </a>
-       `
-     }
+        <a href="product-info.html"class="list-group-item list-group-item-action">
+            <div class="row">
+                <div class="col-1">
+                    <img src="` + pr1.imgSrc + `" alt="` + pr1.description + `" class="img-thumbnail">
+                </div>
+                <div class="col">
+                    <div class="d-flex w-100 justify-content-between">
+                        <h4 class="mb-1">`+ pr1.name +`</h4>
+                        <big class="text-muted">` + "U$S" + pr1.cost + `</big>
+                    </div>
+                </div>
+            </div>
+        </a>
+        `
+      }
    document.getElementById("related").innerHTML= related;
-   }
+   
  };
-
 
  document.addEventListener("DOMContentLoaded", function (e) {
 
