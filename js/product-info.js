@@ -35,7 +35,7 @@ var productes = [];
                <div class="col">
                    <div class="d-flex w-100 justify-content-between">
                        <h4 class="mb-1">`+ pr.name +`</h4>
-                       <big class="text-muted">` + "U$S" + pr.cost + `</big>
+                       <big class="text-muted">` + "U$S" +" "+ pr.cost + `</big>
                    </div>
                </div>
            </div>
