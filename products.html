@@ -34,11 +34,11 @@
     if(localStorage.getItem('losDatos')){
       elJson=localStorage.getItem('losDatos');
       losDatos=JSON.parse(elJson);
-      document.getElementById('tgrupal').innerHTML=losDatos.dato1 //Click para ver//
+      document.getElementById('tgrupal').innerHTML=losDatos.dato1; //Click para ver//
     }else{
       document.getElementById('tgrupal').innerHTML = 'No hay datos'
     }
-  }
+  };
       </script>
   </head>
   <body>
@@ -48,8 +48,15 @@
         <a class="py-2 d-none d-md-inline-block" href="categories.html">Categorías</a>
         <a class="py-2 d-none d-md-inline-block" href="products.html">Productos</a>
         <a class="py-2 d-none d-md-inline-block" href="sell.html">Vender</a>
-        <a class="py-2 d-none d-md-inline-block" href="cart.html">Mi carrito</a>
-        <button  title="Click para ver" class="py-2 d-none d-md-inline-block"id='tgrupal' onclick="llamado()">Usuario</button>
+        <div class="dropdown">
+          <button class="btn btn-secondary dropdown-toggle" type="button" id='tgrupal' onclick="llamado('dato1')"data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+         Usuario </button>
+          <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+            <a class="dropdown-item" href="cart.html">Mi carrito</a>
+            <a class="dropdown-item" href="my-profile.html">Mi perfil</a>
+            <a class="dropdown-item" href="index.html">Cerrar Sesion</a>
+          </div>
+        </div>
       </div>
     </nav>
     <div class="text-center p-4">
