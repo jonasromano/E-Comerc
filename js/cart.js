@@ -3,7 +3,7 @@
 //elementos HTML presentes.
 var articles = [];
 
-function mostrarCarrito(){
+function mostrarCarrito(articles){
 
   let carro = "";
   for(let i = 0; i < articles.length; i++){
@@ -11,22 +11,25 @@ function mostrarCarrito(){
 
 
           carro += `
+        
               <div class="row">
-                 
                   <div class="col">
                       <div class="d-flex w-100 justify-content-between">
                           <h4 class="mb-1">`+ carri.name +`</h4>
-                          <small class="text-muted">` + carri.count +` artículos</small><br>
-                          <big class="text-muted">` + carri.currency + carri.unitCost + `</big>
+                          <big class="text">` + carri.count +` artículos</big><br>
+                          <big class="text">` + carri.currency + carri.unitCost + `</big>
                       </div>
-                      <p class="mb-1">` + carri.src + `</p>
-                  </div>
+                  
+            <div class="d-block mb-4 h-100">
+                <img class="img-fluid img-thumbnail" src="` + carri.src + `" alt="">
+            </div>
+       
               </div>
-         
+       
           `
       }
 
-      document.getElementById("carro").innerHTML = carro;
+      document.getElementById("miCarro").innerHTML = carro;
   
 }
 
@@ -38,10 +41,20 @@ document.addEventListener("DOMContentLoaded", function (e) {
     getJSONData(CART_INFO_URL).then(function(resultObj) { 
      if (resultObj.status === "ok") {
        articles = resultObj.data;
+
+       let nameHTML= document.getElementById("name");
+       let countHTML= document.getElementById("count");
+       let unitCostHTML= document.getElementById("unitCost");
+
+       nameHTML.innerHTML= articles.name;
+       countHTML.innerHTML= articles.count;
+       unitCostHTML.innerHTML= articles.unitCost;
+
+
        
-       mostrarCarrito(articles);
+       
      }
-      
+     mostrarCarrito(articles.articles);
     });
     
  });
