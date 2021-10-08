@@ -145,6 +145,7 @@ body{
 
 .container{
 background: -webkit-radial-gradient(rgb(31, 31, 240),pink);
+
 }
 
 .container #coments{
@@ -186,3 +187,7 @@ background: floralwhite;
   color: #ffff00;
 }
 
+#car{
+  background: rgb(240, 217, 187);
+  box-shadow: 0 0 20px #4f9;
+}

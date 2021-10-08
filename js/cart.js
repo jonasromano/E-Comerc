@@ -11,21 +11,19 @@ function mostrarCarrito(articles){
 
 
           carro += `
-        
-              <div class="row">
-                  <div class="col">
+          <div class="container"id="car">
+              <div class="row-2">
                       <div class="d-flex w-100 justify-content-between">
                           <h4 class="mb-1">`+ carri.name +`</h4>
+                          <div class="d-block mb-4 h-100">
+                <img class="img-fluid img-thumbnail" src="` + carri.src + `" alt="">
+            </div>
+                          <div class="col-9">
                           <big class="text">` + carri.count +` artículos</big><br>
                           <big class="text">` + carri.currency + carri.unitCost + `</big>
                       </div>
-                  
-            <div class="d-block mb-4 h-100">
-                <img class="img-fluid img-thumbnail" src="` + carri.src + `" alt="">
-            </div>
-       
               </div>
-       
+              </div>
           `
       }
 
