@@ -41,7 +41,7 @@
     }
     body{
     border-block-start-color: blueviolet;
-    background: radial-gradient(circle,rgb(0, 255, 98),pink);
+    background: radial-gradient(bottom left,pink,white);
 }
 
 form{
@@ -60,38 +60,49 @@ h1{
 
 form{
     border-style: double;
-    margin-left: 335px;
-    margin-right: 335px;
+    margin-left: 35px;
+    margin-right: 35px;
     background-color: rgb(223, 217, 220);
-    border-radius: 24%;
+    border-radius: 4%;
 }
 input{
   border-radius: 15%;
-  background: -webkit-linear-gradient(yellow,skyblue);
+  background: -webkit-linear-gradient(rgb(241, 241, 161),skyblue);
 }
 button{
-  background: -webkit-linear-gradient(yellow,skyblue);
+  background: -webkit-linear-gradient(rgb(55, 75, 255),rgb(3, 184, 255));
 }
   </style>
 </head>
 
 <body class="text-center">
 
-  <div class="container p-5">
+  
     <br><br><br><br><br>
         <h1>Registrate</h1>
         <br>
-      <form action="inicio.html">
-          <label for="Nombre">Nombre</label>
-          <input type="text" id="Nombre" placeholder="Nombre" name="Nombre"required><br><br>
-          <label for="Contraseña">Contraseña</label>
-          <input type="text" id="Contraseña" placeholder="Contraseña" name="Contraseña"required><br><br>
-          <label for="Correo">Correo electronico</label>
-          <input type="text" id="Correo electronico" placeholder="Correo" name="Correo" required><br><br>
-          <button id="submitBtn" onclick="estorage()" type="submit">INGRESAR</button>
-      </form> 
-  </div>
-
+        <form action="inicio.html">
+          <div class="row mb-3">
+            <label for="Nombre" class="col-sm-2 col-form-label">Nombre</label>
+            <div class="col-sm-10">
+              <input type="name" class="form-control" placeholder="Nombre" id="Nombre" required>
+            </div>
+          </div>
+          <div class="row mb-3">
+            <label for="inputEmail3" class="col-sm-2 col-form-label">Email</label>
+            <div class="col-sm-10">
+              <input type="email" class="form-control" placeholder="Correo" id="Correo electronico"required>
+            </div>
+          </div>
+          <div class="row mb-3">
+            <label for="inputPassword3" class="col-sm-2 col-form-label">Password</label>
+            <div class="col-sm-10">
+              <input type="password" class="form-control" placeholder="Contraseña" id="Contraseña">
+            </div>
+          </div>
+          <button id="submitBtn" onclick="estorage()" type="submit" class="btn btn-primary">Sign in</button>
+        </form>
+  
   <script src="js/init.js"></script>
 </body>
 </html>
