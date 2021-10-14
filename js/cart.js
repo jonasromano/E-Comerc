@@ -11,7 +11,7 @@ function mostrarCarrito(articles){
 
 
           carro += `
-          <div class="card"id="car">
+          <div class="card text-dark bg-white mb-3" style="width: 50rem; position: left;" id="car">
           <div class="row">
               <div class="col">
                       <div class="d-flex w-100 justify-content-between">
