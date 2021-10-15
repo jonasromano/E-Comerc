@@ -26,17 +26,19 @@ function mostrarCarrito(articles){
                           <big class="text">` + carri.currency + carri.unitCost + `</big>
                       </div>
               </div>
-              </div>
-              <div class="card text-white bg-dark mb-3" style="width: 50rem; position: center;" >
+              <div class="col-6">
+              <div class="card text-white bg-dark mb-3" style="width: 40rem; position: right;" >
     <div class="row justify-content-end">
   <div class="col-6">
     <h1> Subtotal:</h1>         
     <h1> Total:</h1>
     <h2> Envio:</h2>
     </div>
-    <div class="col-6">
+    <div class="col col-lg-6">
       <h1>Forma de Pago:</h1>
       <h2 id="cantidad">Cantidad de Articulos:<input class="form-control" type="number" placeholder="máx." id="cant" ></h2>
+    </div>
+    </div>
     </div>
   </div>
           `
