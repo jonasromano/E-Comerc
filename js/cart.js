@@ -22,7 +22,7 @@ function mostrarCarrito(articles){
                           <div class="d-block mb-4 h-100">
                         
                           <div class="col">
-                          <big class="text">` + carri.count +` artículos</big><br>
+                          <big class="text">Cantidad de articulos <input class="form-control" value=` + carri.count +` type="number" placeholder="2" id="cant" ></big><br>
                           <big class="text">` + carri.currency + carri.unitCost + `</big>
                       </div>
               </div>
@@ -36,7 +36,6 @@ function mostrarCarrito(articles){
     </div>
     <div class="col col-lg-6">
       <h1>Forma de Pago:</h1>
-      <h2 id="cantidad">Cantidad de Articulos:<input class="form-control" type="number" placeholder="máx." id="cant" ></h2>
     </div>
     </div>
     </div>
@@ -61,6 +60,14 @@ document.addEventListener("DOMContentLoaded", function (e) {
     });
     
  });
+
+ function subtotal(){
+   let tot=0;
+   let subs = document.getElementsByClassName("Subtotal");
+   for(let i= 0;i<subs.length;i++){
+     tot += parseInt(subs[i].innerHTML);
+   }
+ }
 
 
  
