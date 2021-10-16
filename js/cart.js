@@ -3,11 +3,13 @@
 //elementos HTML presentes.
 var articles = [];
 
+
 function mostrarCarrito(articles){
 
   let carro = "";
   for(let i = 0; i < articles.length; i++){
       let carri= articles[i];
+      let r = (carri.unitCost * carri.count);
 
 
           carro += `
@@ -30,7 +32,7 @@ function mostrarCarrito(articles){
               <div class="card text-white bg-dark mb-3" style="width: 40rem; position: right;" >
     <div class="row justify-content-end">
   <div class="col-6">
-    <h1> Subtotal:<strong class="h4 text-success Subtotal" id="subs"></strong></h1>         
+    <h1> Subtotal:<strong class="h4 text-success Subtotal" id="subs`+i+`">`+r+`</strong></h1>         
     <h1> Total:</h1>
     <h2> Envio:</h2>
     </div>
@@ -61,20 +63,21 @@ document.addEventListener("DOMContentLoaded", function (e) {
     
  });
  
- function grupal(cantidad,tot){
-   let subs = document.getElementById("cantidad"+cantidad).value;
-   let sub= (subs * tot);
-   document.getElementById('sub'+cantidad).innerHTML = sub;
-   subtotal()
+ function grupal(cantidad,valor){
+   let subs = document.getElementById('cantidad'+cantidad).value;
+   let sub= (subs * valor);
+   document.getElementById('subs'+cantidad).innerHTML = sub;
+   subtotal();
  }
 
  function subtotal(){
-   let tot= 0;
-   let subs = document.getElementsByClassName("Subtotal");
+   let valor= 0;
+   let subs = document.getElementsByClassName('Subtotal');
+   let doc = document.getElementById('valor');
    for(let i= 0;i<subs.length;i++){
-     tot += parseInt(subs[i].innerHTML);
+     valor += parseInt(subs[i].innerHTML);
    }
-   document.getElementById("subs").innerHTML= subs;
+   doc.innerHTML = valor;
  }
 
 
