@@ -32,9 +32,18 @@ function mostrarCarrito(articles){
               <div class="card text-white bg-dark mb-3" style="width: 40rem; position: right;" >
     <div class="row justify-content-end">
     <div class="col">
-    <h1> Subtotal:<strong class="h4 text-success Subtotal" id="subs`+i+`">`+r+`</strong></h1>         
+    <h1> Subtotal:<strong class="h4 text-success Subtotal" id="subs`+i+`">`+"$"+r+`</strong></h1>         
     <h1> Total:</h1>
-    <h2> Envio:</h2>
+    <h2> <div class="btn-group dropend">
+    <button type="button" class="btn btn-danger dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
+      Envio
+    </button>
+    <ul class="dropdown-menu" >
+    <li><a class="btn-group dropend-item" href="#"></a></li>
+    <li><a class="btn-group dropend-item" href="#"></a></li>
+    <li><a class="btn-group dropend-item" href="#"></a></li>
+    </ul>
+  </div></h2>
     <div class="btn-group dropend">
   <button type="button" class="btn btn-danger dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
     Metodo de PAGO
@@ -88,6 +97,14 @@ document.addEventListener("DOMContentLoaded", function (e) {
    doc.innerHTML = valor;
  }
 
-
+ 
+function dolar(){
+  if ( currency === "USD"){
+    return unitCost * 40 ;
+  }else{
+    "cantidad"
+  }
+  
+}
  
 
