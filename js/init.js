@@ -7,6 +7,7 @@ const PRODUCT_INFO_COMMENTS_URL = "https://japdevdep.github.io/ecommerce-api/pro
 const CART_INFO_URL = "https://japdevdep.github.io/ecommerce-api/cart/987.json";
 const CART_BUY_URL = "https://japdevdep.github.io/ecommerce-api/cart/buy.json";
 const NEW_PRODUCTS_URL="https://jonasromano.github.io/E-Comerc/productos.JSON";
+const NEW_CART_URL="https://japdevdep.github.io/ecommerce-api/cart/654.json"
 
 var showSpinner = function(){
   document.getElementById("spinner-wrapper").style.display = "block";

@@ -14,8 +14,8 @@ function mostrarCarrito(articles){
 
           carro += `
           <div class="card text-dark bg-white mb-3" style="width: 50rem; position: left;" id="car">
-          <div class="row">
-              <div class="col">
+          <div class="grid">
+          <div class="g-col-6">
                       <div class="d-flex w-100 justify-content-between">
                           <h4 class="mb-1">`+ carri.name +`</h4>
                           <p>
@@ -28,16 +28,24 @@ function mostrarCarrito(articles){
                           <big class="text">` + carri.currency + carri.unitCost + `</big>
                       </div>
               </div>
-              <div class="col-6">
+              </div>
               <div class="card text-white bg-dark mb-3" style="width: 40rem; position: right;" >
     <div class="row justify-content-end">
-  <div class="col-6">
+    <div class="col">
     <h1> Subtotal:<strong class="h4 text-success Subtotal" id="subs`+i+`">`+r+`</strong></h1>         
     <h1> Total:</h1>
     <h2> Envio:</h2>
+    <div class="btn-group dropend">
+  <button type="button" class="btn btn-danger dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
+    Metodo de PAGO
+  </button>
+  <ul class="dropdown-menu" >
+  <li><a class="btn-group dropend-item" href="#">Tarjeta</a></li>
+  <li><a class="btn-group dropend-item" href="#">Efectivo</a></li>
+  <li><a class="btn-group dropend-item" href="#">Mercado Pago</a></li>
+  </ul>
+</div>
     </div>
-    <div class="col col-lg-6">
-      <h1>Forma de Pago:</h1>
     </div>
     </div>
     </div>
@@ -54,7 +62,7 @@ function mostrarCarrito(articles){
 
 document.addEventListener("DOMContentLoaded", function (e) {
 
-    getJSONData(CART_INFO_URL).then(function(resultObj) { 
+    getJSONData(NEW_CART_URL).then(function(resultObj) { 
      if (resultObj.status === "ok") {
        articles = resultObj.data;
      }
