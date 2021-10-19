@@ -27,9 +27,30 @@ function mostrarCarrito(articles){
                           <big class="text">Cantidad de articulos <input class="form-control" value=` + carri.count +` onchange="grupal(`+i+`,`+carri.unitCost+`)" type="number" placeholder="2" id="cantidad`+i+`" ></big><br>
                           <big class="text">` + carri.currency + carri.unitCost + `</big>
                       </div>
+                      </div>
+    </div>
               </div>
               </div>
-              <div class="card text-white bg-dark mb-3" style="width: 40rem; position: right;" >
+          `
+      }
+
+      document.getElementById("miCarro").innerHTML = carro;
+  
+}
+
+var articles = [];
+
+
+function mostrar(articles){
+
+  let carro = "";
+  for(let i = 0; i < articles.length; i++){
+      let carri= articles[i];
+      let r = (carri.unitCost * carri.count);
+
+
+          carro += `
+<div class="card text-white bg-dark mb-3" style="width: 40rem; position: right;" >
     <div class="row justify-content-end">
     <div class="col">
     <h1> Subtotal:<strong class="h4 text-success Subtotal" id="subs`+i+`">`+"$"+r+`</strong></h1>         
@@ -56,14 +77,12 @@ function mostrarCarrito(articles){
 </div>
     </div>
     </div>
-    </div>
-    </div>
   </div>
-          `
-      }
+  `
+}
 
-      document.getElementById("miCarro").innerHTML = carro;
-  
+document.getElementById("dede").innerHTML = carro;
+
 }
 
 
@@ -76,6 +95,7 @@ document.addEventListener("DOMContentLoaded", function (e) {
        articles = resultObj.data;
      }
      mostrarCarrito(articles.articles);
+     mostrar(articles.articles);
     });
     
  });
