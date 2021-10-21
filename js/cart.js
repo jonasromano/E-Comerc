@@ -13,13 +13,13 @@ function mostrarCarrito(articles){
 
 
           carro += `
-          <div class="card text-dark bg-white mb-3" style="width: 50rem; position: left;" id="car">
+          <div class="card text-dark bg-white mb-3 mx-auto" style="width: 50rem;" id="car">
           <div class="grid">
           <div class="g-col-6">
                       <div class="d-flex w-100 justify-content-between">
                           <h4 class="mb-1">`+ carri.name +`</h4>
                           <p>
-                          <img class="img-fluid img-thumbnail" src="` + carri.src + `" alt="">
+                          <img class="img-fluid img-thumbnail" src="` + carri.src + `" alt="" width="100" height="100">
                           </p>
                           <div class="d-block mb-4 h-100">
                         
@@ -55,25 +55,25 @@ function mostrar(articles){
     <div class="col">
     <h1> Subtotal:<strong class="h4 text-success Subtotal" id="subs`+i+`">`+"$"+r+`</strong></h1>         
     <h1> Total:</h1>
-    <h2> <div class="btn-group dropend">
+    <div class="btn-group dropend">
     <button type="button" class="btn btn-danger dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
       Envio
     </button>
-    <ul class="dropdown-menu" >
+    <div class="dropdown-menu" >
     <li><a class="btn-group dropend-item" href="#"></a></li>
     <li><a class="btn-group dropend-item" href="#"></a></li>
     <li><a class="btn-group dropend-item" href="#"></a></li>
-    </ul>
-  </div></h2>
+    </div>
+  </div>
     <div class="btn-group dropend">
-  <button type="button" class="btn btn-danger dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
+  <button type="button" class="btn btn-danger dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false"aria-haspopup="true" >
     Metodo de PAGO
   </button>
-  <ul class="dropdown-menu" >
+  <div class="dropdown-menu" >
   <li><a class="btn-group dropend-item" href="#">Tarjeta</a></li>
   <li><a class="btn-group dropend-item" href="#">Efectivo</a></li>
   <li><a class="btn-group dropend-item" href="#">Mercado Pago</a></li>
-  </ul>
+  </div>
 </div>
     </div>
     </div>
