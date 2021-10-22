@@ -55,24 +55,24 @@ function mostrar(articles){
     <div class="col">
     <h1> Subtotal:<strong class="h4 text-success Subtotal" id="subs`+i+`">`+"$"+r+`</strong></h1>         
     <h1> Total:</h1>
-    <div class="btn-group dropend">
+    <div class="dropdown">
     <button type="button" class="btn btn-danger dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
       Envio
     </button>
     <div class="dropdown-menu" >
-    <li><a class="btn-group dropend-item" href="#"></a></li>
-    <li><a class="btn-group dropend-item" href="#"></a></li>
-    <li><a class="btn-group dropend-item" href="#"></a></li>
+    <a class="dropdown-item" href="#"></a>
+    <a class="dropdown-item" href="#"></a>
+    <a class="dropdown-item" href="#"></a>
     </div>
   </div>
-    <div class="btn-group dropend">
+    <div class="dropdwon">
   <button type="button" class="btn btn-danger dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false"aria-haspopup="true" >
     Metodo de PAGO
   </button>
   <div class="dropdown-menu" >
-  <li><a class="btn-group dropend-item" href="#">Tarjeta</a></li>
-  <li><a class="btn-group dropend-item" href="#">Efectivo</a></li>
-  <li><a class="btn-group dropend-item" href="#">Mercado Pago</a></li>
+  <a class="dropdown-item" href="#">Tarjeta</a>
+  <a class="dropdown-item" href="#">Efectivo</a>
+  <a class="dropdown-item" href="#">Mercado Pago</a>
   </div>
 </div>
     </div>
