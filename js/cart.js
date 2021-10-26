@@ -60,19 +60,61 @@ function mostrar(articles){
     METODO DE PAGO
   </button>
   <ul class="dropdown-menu">
-  <li><a class="dropdown-item" href="#">Tarjeta</a></li>
-  <li><a class="dropdown-item" href="#">Efectivo</a></li>
-  <li><a class="dropdown-item" href="#">Transferencia</a></li>
+  <li><div class="form-check">
+  <input class="form-check-input" type="radio" name="gridRadios" id="gridRadios1" value="option1" checked>
+  <label class="form-check-label" for="gridRadios1">
+    Tarjeta
+  </label>
+</div></li>
+  <li><div class="form-check">
+  <input class="form-check-input" type="radio" name="gridRadios" id="gridRadios1" value="option1" checked>
+  <label class="form-check-label" for="gridRadios1">
+    Efectivo
+  </label>
+</div></li>
+  <li><div class="form-check">
+  <input class="form-check-input" type="radio" name="gridRadios" id="gridRadios1" value="option1" checked>
+  <label class="form-check-label" for="gridRadios1">
+    Transferencia
+  </label>
+</div></li>
   </ul>
 </div>
 <div class="btn-group dropend">
   <button type="button" class="btn btn-danger dropdown-toggle" data-toggle="dropdown" aria-expanded="false">
     ENVIO
   </button>
+  <form>
+  <div class="mb-3">
+    <label for="calle" class="form-label">Calle</label>
+    <input type="calle" class="form-control" id="calle" aria-describedby="calle">
+    <div id="emailHelp" class="form-text">Ingrese su dirección y numero de puerta.</div>
+  </div>
+  <div class="mb-3">
+    <label for="esquina" class="form-label">Esquina</label>
+    <input type="esquina" class="form-control" id="esquina">
+  </div>
+  <button type="submit" class="btn btn-primary">Submit</button>
+</form>
   <ul class="dropdown-menu">
-  <li><a class="dropdown-item" href="#"></a></li>
-  <li><a class="dropdown-item" href="#"></a></li>
-  <li><a class="dropdown-item" href="#"></a></li>
+  <li><div class="form-check">
+  <input class="form-check-input" type="radio" name="gridRadios" id="gridRadios1" value="option1" checked>
+  <label class="form-check-label" for="gridRadios1">
+    Premium
+  </label>
+</div></li>
+  <li><div class="form-check">
+  <input class="form-check-input" type="radio" name="gridRadios" id="gridRadios1" value="option1" checked>
+  <label class="form-check-label" for="gridRadios1">
+    Express
+  </label>
+</div></li>
+  <li><div class="form-check">
+  <input class="form-check-input" type="radio" name="gridRadios" id="gridRadios1" value="option1" checked>
+  <label class="form-check-label" for="gridRadios1">
+    Standard
+  </label>
+</div></li>
   </ul>
 </div>
     </div>

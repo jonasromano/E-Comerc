@@ -69,11 +69,47 @@
     </div>
   </nav>
   <div class="container p-5">
-    <div class="alert alert-danger" role="alert" style="position: relative; width:auto; top: 0;">
-      <h4 class="alert-heading">¡A trabajar! :)</h4>
-      <p>Esta sección corresponde a: Entrega 6 (Fecha de entrega: 31/10/2021).</p>
-      <hr>
-      <p class="mb-0">Para saber qué debes hacer, fijate en la actividad en CREA correspondiente a esta entrega.</p>
+    <div class="alert alert-success" role="alert">
+      <form class="row g-3">
+        <div class="col-md-6">
+          <label for="inputEmail4" class="form-label">Correo</label>
+          <input type="email" class="form-control" id="inputEmail4">
+        </div>
+        <div class="col-md-6">
+          <label for="inputPassword4" class="form-label">Contraseña</label>
+          <input type="password" class="form-control" id="inputPassword4">
+        </div>
+        <div class="col-12">
+          <label for="name" class="form-label">Nombres</label>
+          <input type="text" class="form-control" id="name" placeholder="Ingrese Nombre completo">
+        </div>
+        <div class="col-12">
+          <label for="subname" class="form-label">Apellidos</label>
+          <input type="text" class="form-control" id="subname" placeholder="Ingrese ambos Apellidos">
+        </div>
+        <div class="col-md-6">
+          <label for="phone" class="form-label">Telefono</label>
+          <input type="text" class="form-control" id="phone">
+        </div>
+        <div class="col-md-4">
+          <label for="age" class="form-label">Edad</label>
+          <select id="age" class="form-select">
+            <option selected>Eliga su edad..</option>
+            <option>...</option>
+          </select>
+        </div>
+        <div class="col-12">
+          <div class="form-check">
+            <input class="form-check-input" type="checkbox" id="gridCheck">
+            <label class="form-check-label" for="gridCheck">
+              Acepto terminos y condiciones!
+            </label>
+          </div>
+        </div>
+        <div class="col-12">
+          <button type="submit" class="btn btn-primary">Registrarme</button>
+        </div>
+      </form>
     </div>
   </div>
   <footer class="text-muted bg-light">
