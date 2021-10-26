@@ -9,13 +9,13 @@ function mostrarCarrito(articles){
   let carro = "";
   for(let i = 0; i < articles.length; i++){
       let carri= articles[i];
-      let r = (carri.unitCost * carri.count);
 
 
           carro += `
-          <div class="card text-dark bg-white mb-3 mx-auto" style="width: 50rem;" id="car">
+          <div class="card text-dark bg-white mb-3 mx-auto" style="width: 35rem;" id="car">
           <div class="grid">
-          <div class="g-col-6">
+          <div class="row justify-content">
+          <div class="col-md">
                       <div class="d-flex w-100 justify-content-between">
                           <h4 class="mb-1">`+ carri.name +`</h4>
                           <p>
@@ -25,9 +25,10 @@ function mostrarCarrito(articles){
                         
                           <div class="col">
                           <big class="text">Cantidad de articulos <input class="form-control" value=` + carri.count +` onchange="grupal(`+i+`,`+carri.unitCost+`)" type="number" placeholder="2" id="cantidad`+i+`" ></big><br>
-                          <big class="text">` + carri.currency + carri.unitCost + `</big>
+                          <big class="text" id="dola">` + carri.currency + carri.unitCost + `</big>
                       </div>
                       </div>
+    </div>
     </div>
               </div>
               </div>
@@ -46,35 +47,34 @@ function mostrar(articles){
   let carro = "";
   for(let i = 0; i < articles.length; i++){
       let carri= articles[i];
-      let r = (carri.unitCost * carri.count);
-
+      let r = (carri.unitCost * carri.count); 
 
           carro += `
-<div class="card text-white bg-dark mb-3" style="width: 40rem; position: right;" >
+<div class="card text-white bg-dark mb-3 mx-auto" style="width: 35rem; position:left;" >
     <div class="row justify-content-end">
-    <div class="col">
+    <div class="col-md">
     <h1> Subtotal:<strong class="h4 text-success Subtotal" id="subs`+i+`">`+"$"+r+`</strong></h1>         
     <h1> Total:</h1>
-    <div class="dropdown">
-        <button type="button" class="btn btn-danger dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
-          Envio
-        </button>
-        <div class="dropdown-menu" >
-        <a class="dropdown-item" href="#"></a>
-        <a class="dropdown-item" href="#"></a>
-        <a class="dropdown-item" href="#"></a>
-        </div>
-      </div>
-        <div class="dropdwon">
-      <button type="button" class="btn btn-danger dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false"aria-haspopup="true" >
-        Metodo de PAGO
-      </button>
-      <div class="dropdown-menu" >
-      <a class="dropdown-item" href="#">Tarjeta</a>
-      <a class="dropdown-item" href="#">Efectivo</a>
-      <a class="dropdown-item" href="#">Mercado Pago</a>
-      </div>
-    </div>
+    <div class="btn-group dropend">
+  <button type="button" class="btn btn-danger dropdown-toggle" data-toggle="dropdown" aria-expanded="false">
+    METODO DE PAGO
+  </button>
+  <ul class="dropdown-menu">
+  <li><a class="dropdown-item" href="#">Tarjeta</a></li>
+  <li><a class="dropdown-item" href="#">Efectivo</a></li>
+  <li><a class="dropdown-item" href="#">Transferencia</a></li>
+  </ul>
+</div>
+<div class="btn-group dropend">
+  <button type="button" class="btn btn-danger dropdown-toggle" data-toggle="dropdown" aria-expanded="false">
+    ENVIO
+  </button>
+  <ul class="dropdown-menu">
+  <li><a class="dropdown-item" href="#"></a></li>
+  <li><a class="dropdown-item" href="#"></a></li>
+  <li><a class="dropdown-item" href="#"></a></li>
+  </ul>
+</div>
     </div>
     </div>
     </div>
@@ -82,7 +82,7 @@ function mostrar(articles){
   `
 }
 
-document.getElementById("dede").innerHTML = carro;
+document.getElementById("de").innerHTML = carro;
 
 }
 
@@ -119,13 +119,11 @@ document.addEventListener("DOMContentLoaded", function (e) {
  }
 
  
-function dolar(){
-  if ( currency === "USD"){
-    return unitCost * 40 ;
-  }else{
-    "cantidad"
-  }
-  
+function dolar(currency){
+  let dol= document.getElementById("dola"+currency).value;
+  let dolares = (dol * 40);
+  document.getElementById("subs").innerHTML=dolares;
+  subtotal();
 }
  
 
