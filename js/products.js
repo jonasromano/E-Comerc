@@ -15,21 +15,29 @@ function mostrarImagenes(){
           ((maxCount == undefined) || (maxCount != undefined && parseInt(img.cost) <= maxCount))){
 
           imagenes += `
-          <a href="product-info.html" class="list-group-item list-group-item-action">
+          <div class="album py-5 bg-light">
+          <div class="container">
               <div class="row">
-                  <div class="col-3">
+              <div class="col-md-4">
+          <a href="product-info.html" class="card mb-4 shadow-sm custom-card">
+          
+                  <div class="bd-placeholder-img card-img-top" >
                       <img src="` + img.imgSrc + `" alt="` + img.description + `" class="img-thumbnail">
                   </div>
                   <div class="col">
                       <div class="d-flex w-100 justify-content-between">
-                          <h4 class="mb-1">`+ img.name +`</h4>
+                          <h4 class="m-3">`+ img.name +`</h4>
                           <small class="text-muted">` + img.soldCount +` artículos</small><br>
                           <big class="text-muted">` + "U$S" + img.cost + `</big>
                       </div>
-                      <p class="mb-1">` + img.description + `</p>
+                      <p class="card-body">` + img.description + `</p>
+                  </div>
+                  </a>
                   </div>
               </div>
-          </a>
+              </div>
+         
+          </div>
           `
       }
 
