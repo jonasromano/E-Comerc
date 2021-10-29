@@ -15,8 +15,6 @@ function mostrarImagenes(){
           ((maxCount == undefined) || (maxCount != undefined && parseInt(img.cost) <= maxCount))){
 
           imagenes += `
-          <div class="album py-5 bg-light">
-              <div class="row">
               <div class="col-md-4">
           <a href="product-info.html" class="card mb-4 shadow-sm custom-card">
           
@@ -33,8 +31,7 @@ function mostrarImagenes(){
                   </div>
                   </a>
                   </div>
-              </div>
-          </div>
+              
           `
       }
 
