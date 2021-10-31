@@ -12,6 +12,9 @@ function profile(){
     let perfil = JSON.stringify(datos);
     localStorage.setItem('perfile',perfil);
 }
+function alerta(){
+    
+}
 
 
 document.addEventListener("DOMContentLoaded", function (e) {
