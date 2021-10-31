@@ -1,6 +1,8 @@
 //Función que se ejecuta una vez que se haya lanzado el evento de
 //que el documento se encuentra cargado, es decir, se encuentran todos los
 //elementos HTML presentes.
+
+
 function profile(){
     let datos = {
         date1: document.getElementById('name').value,
@@ -11,7 +13,22 @@ function profile(){
     };
     let perfil = JSON.stringify(datos);
     localStorage.setItem('perfile',perfil);
+    document.getElementById("registro").innerHTML = datos;
+
 }
+function llamada(){
+    if(localStorage.getItem('perfile')){
+      perfil=localStorage.getItem('perfile');
+      perfile=JSON.parse(perfil);
+      document.getElementById('pnombre').innerHTML=perfile.date1
+      document.getElementById('papellidos').innerHTML=perfile.date2
+      document.getElementById('pcorreo').innerHTML=perfile.date4
+      document.getElementById('ptelefono').innerHTML=perfile.date5//Click para ver//
+    }else{
+      document.getElementById('r').innerHTML = 'No hay datos'
+    }
+    
+  }
 
 
 

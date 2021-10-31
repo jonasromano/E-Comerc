@@ -56,7 +56,7 @@
            Usuario </button>
             <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
               <a class="dropdown-item" href="cart.html">Mi carrito</a>
-              <a class="dropdown-item" href="#">Mi perfil</a>
+              <a class="dropdown-item" href="my-profile.html">Mi perfil</a>
               <a class="dropdown-item" href="index.html">Cerrar Sesion</a>
             </div>
           </div>
@@ -69,8 +69,8 @@
     </div>
   </nav>
   <div class="container p-5">
-    
-      <form class="row g-3" >
+    <div class="alert alert-success" role="alert" >
+      <form class="row g-3"  >
         <div class="col-md-6">
           <label for="inputEmail4" class="form-label">Correo</label>
           <input type="email" class="form-control" id="inputEmail4">
@@ -108,17 +108,35 @@
           </div>
         </div>
         <div class="col-12">
-          <button type="submit" class="btn btn-primary" id="registro" onclick="profile()">Registrarme</button>
+          <button type="submit" data-dismiss="alert"class="btn btn-primary" id="registro" onclick="profile()">Registrarme</button>
         </div>
       </form>
-    
+    </div>
     <div class="text-center p-4">
       <h2>SU PERFIL </h2>
   </div>
-    <h1>Nombre:</h1>
-    <h1>Apellidos:</h1>
-    <h2>Telefono:</h2>
-    <p>Correo Electronico:</p>
+  <dl id="r" onclick="llamada('datos')" >
+    <dt>Nombre</dt>
+    <dd>
+      <p id="pnombre" ></p>
+    </dd>
+
+    <dt>Apellidos</dt>
+    <dd>
+      <p id="papellidos"></p>
+    </dd>
+
+    <dt>Correo Electronico</dt>
+    <dd>
+      <p id="pcorreo"></p>
+    </dd>
+
+    <dt>Telefono</dt>
+    <dd>
+      <div id="ptelefono">
+      </div>
+    </dd>
+  </dl>
   </div>
   <footer class="text-muted bg-light">
     <div class="container">

@@ -24,7 +24,7 @@ function showImagesGallery(array){
 //elementos HTML presentes.
 document.addEventListener("DOMContentLoaded", function(e){
     getJSONData(CATEGORY_INFO_URL).then(function(resultObj){
-        if (resultObj.status === "ok")
+        
         {
             category = resultObj.data;
 
