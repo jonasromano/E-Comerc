@@ -56,29 +56,45 @@ function mostrar(articles){
     <h1> Subtotal:<strong class="h4 text-success Subtotal" id="subs`+i+`">`+"$"+r+`</strong></h1>         
     <h1> Total:</h1>
     <div class="btn-group dropend">
-  <button type="button" class="btn btn-danger dropdown-toggle" data-toggle="dropdown" aria-expanded="false">
-    METODO DE PAGO
+    <button type="button" class="btn btn-primary text-dark" data-toggle="modal" data-target="#exampleModal">
+    Forma de pago
   </button>
-  <ul class="dropdown-menu">
+  <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title text-dark" id="exampleModalLabel">Forma de pago</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body ">
   <li><div class="form-check">
-  <input class="form-check-input" type="radio" name="gridRadios" id="gridRadios1" value="option1" checked>
-  <label class="form-check-label" for="gridRadios1">
+  <input class="form-check-input " type="radio" name="gridRadios" id="gridRadios1" value="option1" checked>
+  <label class="form-check-label text-dark" for="gridRadios1">
     Tarjeta
   </label>
 </div></li>
   <li><div class="form-check">
   <input class="form-check-input" type="radio" name="gridRadios" id="gridRadios1" value="option1" checked>
-  <label class="form-check-label" for="gridRadios1">
+  <label class="form-check-label text-dark" for="gridRadios1">
     Efectivo
   </label>
 </div></li>
   <li><div class="form-check">
   <input class="form-check-input" type="radio" name="gridRadios" id="gridRadios1" value="option1" checked>
-  <label class="form-check-label" for="gridRadios1">
+  <label class="form-check-label text-dark" for="gridRadios1">
     Transferencia
   </label>
 </div></li>
   </ul>
+</div>
+<div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
+        <button type="button" class="btn btn-primary">Guardar Cambios</button>
+      </div>
+    </div>
+  </div>
 </div>
 <div class="btn-group dropend">
   <button type="button" class="btn btn-danger dropdown-toggle" data-toggle="dropdown" aria-expanded="false">
