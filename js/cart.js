@@ -81,12 +81,6 @@ function mostrar(articles){
     Efectivo
   </label>
 </div></li>
-  <li><div class="form-check">
-  <input class="form-check-input" type="radio" name="gridRadios" id="gridRadios1" value="option1" checked>
-  <label class="form-check-label text-dark" for="gridRadios1">
-    Transferencia
-  </label>
-</div></li>
   </ul>
 </div>
 <div class="modal-footer">
