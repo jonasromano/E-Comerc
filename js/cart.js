@@ -74,6 +74,8 @@ function mostrar(articles){
   <label class="form-check-label text-dark" for="gridRadios1">
     Tarjeta
   </label>
+  <label for="number" class="form-label text-dark">Numero de Tarjeta</label>
+    <input type="number" class="form-control" id="nmtar" aria-describedby="number">
 </div></li>
   <li><div class="form-check">
   <input class="form-check-input" type="radio" name="gridRadios" id="gridRadios1" value="option1" checked>

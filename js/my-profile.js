@@ -27,7 +27,38 @@ function llamada(){
     }else{
       document.getElementById('r').innerHTML = 'No hay datos'
     }
-    
+    let mr = perfile;
+    for(let i = 0;length; i++){
+        
+        mr +=`
+        <dt>Nombre:</dt>
+    <dd>
+      <p id="pnombre" ></p>
+    </dd>
+<hr>
+    <dt>Apellidos:</dt>
+    <dd>
+      <p id="papellidos"></p>
+    </dd>
+<hr>
+    <dt>Correo Electronico:</dt>
+    <dd>
+      <p id="pcorreo"></p>
+    </dd>
+<hr>
+    <dt>Telefono:</dt>
+    <dd>
+      <div id="ptelefono">
+      </div>
+    </dd>
+    <hr>
+    <dt>Edad:</dt>
+    <dd>
+      <p id="pedad"></p>
+    </dd>
+        `
+    }
+    document.getElementById("r").innerHTML=mr;
   }
 
 
