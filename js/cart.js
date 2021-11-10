@@ -3,17 +3,15 @@
 //elementos HTML presentes.
 var articles = [];
 
-
+//Funcion para mostrar los articulos del carrito seleccionados.
 function mostrarCarrito(articles){
 
   let carro = "";
   for(let i = 0; i < articles.length; i++){
       let carri= articles[i];
-
+      let r = (carri.unitCost * carri.count); 
 
           carro += `
-          <div class="card text-dark bg-white mb-3 mx-auto" style="width: 35rem;" id="car">
-          <div class="grid">
           <div class="row justify-content">
           <div class="col-md">
                       <div class="d-flex w-100 justify-content-between">
@@ -25,13 +23,18 @@ function mostrarCarrito(articles){
                         
                           <div class="col">
                           <big class="text">Cantidad de articulos <input class="form-control" value=` + carri.count +` onchange="grupal(`+i+`,`+carri.unitCost+`)" type="number" placeholder="2" id="cantidad`+i+`" ></big><br>
+                          <div class="container" id="car">
                           <big class="text" id="dola">` + carri.currency + carri.unitCost + `</big>
+                          </div>
                       </div>
                       </div>
-    </div>
-    </div>
+                </div>
+             </div>
+         </div>
+         <div class="col-md" style='text-align:right' ">
+              <h1> Subtotal:<strong class="h4 text-success Subtotal" id="subs`+i+`">`+"$"+r+`</strong></h1>
               </div>
-              </div>
+              <hr>   
           `
       }
 
@@ -42,42 +45,52 @@ function mostrarCarrito(articles){
 var articles = [];
 
 
-function mostrar(articles){
+function mostrar(articles){   //Funcion para mostrar el Proceso final de compra(Total,Metodo de envio y Metodo de pago)
 
   let carro = "";
-  for(let i = 0; i < articles.length; i++){
-      let carri= articles[i];
-      let r = (carri.unitCost * carri.count); 
-
+  {        
           carro += `
-<div class="card text-white bg-dark mb-3 mx-auto" style="width: 35rem; position:left;" >
+          <div class="container-fluid" id="de">
     <div class="row justify-content-end">
     <div class="col-md">
-    <h1> Subtotal:<strong class="h4 text-success Subtotal" id="subs`+i+`">`+"$"+r+`</strong></h1>         
-    <h1> Total:</h1>
+        <h1> Total:</h1> 
+
     <div class="btn-group dropend">
     <button type="button" class="btn btn-primary text-dark" data-toggle="modal" data-target="#exampleModal">
     Forma de pago
-  </button>
-  <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-  <div class="modal-dialog">
-    <div class="modal-content">
-      <div class="modal-header">
-        <h5 class="modal-title text-dark" id="exampleModalLabel">Forma de pago</h5>
-        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-          <span aria-hidden="true">&times;</span>
+    </button>
+      <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+       <div class="modal-dialog">
+        <div class="modal-content">
+         <div class="modal-header">
+          <h5 class="modal-title text-dark" id="exampleModalLabel">Forma de pago</h5>
+           <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
         </button>
       </div>
-      <div class="modal-body ">
-  <li><div class="form-check">
-  <input class="form-check-input " type="radio" name="gridRadios" id="gridRadios1" value="option1" checked>
-  <label class="form-check-label text-dark" for="gridRadios1">
-    Tarjeta
-  </label>
-  <label for="number" class="form-label text-dark">Numero de Tarjeta</label>
-    <input type="number" class="form-control" id="nmtar" aria-describedby="number">
-</div></li>
-  <li><div class="form-check">
+     <div class="modal-body ">
+  <li>
+   <div class="form-check">
+    <input class="form-check-input " type="radio" name="gridRadios" id="gridRadios1" value="option1" checked>
+     <label class="form-check-label text-dark" for="gridRadios1">Tarjeta</label>
+      <div class="row g-3">
+       <div class="col-sm-7">
+        <label for="number" class="form-label text-dark">Numero de Tarjeta</label>
+          <input type="number" class="form-control" id="nmtar" aria-describedby="number">
+         </div>
+      <div class="col-sm">
+        <label for="number" class="form-label text-dark">Fecha de vencimiento</label>
+          <input type="number" class="form-control" id="vencimiento" aria-describedby="number">
+         </div>
+      <div class="col-sm">
+       <label for="number" class="form-label text-dark">Codigo de seguridad</label>
+        <input type="number" class="form-control" id="seguridad" aria-describedby="number">
+       </div>
+      </div>
+     </div></li>
+    <hr>
+    <li><div class="form-check">
+    
   <input class="form-check-input" type="radio" name="gridRadios" id="gridRadios1" value="option1" checked>
   <label class="form-check-label text-dark" for="gridRadios1">
     Efectivo
@@ -132,7 +145,7 @@ function mostrar(articles){
     </div>
     </div>
     </div>
-  </div>
+    </div>
   `
 }
 
@@ -160,7 +173,7 @@ document.addEventListener("DOMContentLoaded", function (e) {
    let sub= (subs * valor);
    document.getElementById('subs'+cantidad).innerHTML = sub;
    subtotal();
- }
+ }  //Funcion que toma los calores de la cantidad de productos para poder usarlos en la siguiente funcion.
 
  function subtotal(){
    let valor= 0;
@@ -170,7 +183,7 @@ document.addEventListener("DOMContentLoaded", function (e) {
      valor += parseInt(subs[i].innerHTML);
    }
    doc.innerHTML = valor;
- }
+ } //Funcion para calcular el subtotal.
 
  
 function dolar(currency){
@@ -178,6 +191,6 @@ function dolar(currency){
   let dolares = (dol * 40);
   document.getElementById("subs").innerHTML=dolares;
   subtotal();
-}
+} // Intento de funcion para modificar el calculo del dolar(Aun no esta echa)
  
 
