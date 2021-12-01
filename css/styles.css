@@ -140,11 +140,11 @@ a.custom-card:hover {
 }
 
 body{
-  background: -webkit-linear-gradient(bottom left,pink,white );
+  background: -webkit-linear-gradient(bottom left,rgb(95, 93, 94),white );
 }
 
 .container{
-background: -webkit-radial-gradient(rgb(167, 167, 209),pink);
+background: -webkit-radial-gradient(rgb(167, 167, 209),rgb(218, 213, 213));
 
 }
 

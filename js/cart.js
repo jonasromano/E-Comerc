@@ -14,6 +14,7 @@ function mostrarCarrito(articles){
       
       
           carro += `
+          <tr id="carri${i}">
           <div class="row justify-content">
           <div class="col-md">
                       <div class="d-flex w-100 justify-content-between">
@@ -35,7 +36,9 @@ function mostrarCarrito(articles){
          </div>
          <div class="col-md" style='text-align:right' ">
               <h1> Subtotal:<strong class="h4 text-success Subtotal" id="subs`+i+`">`+r+`</strong></h1>
+              <button class="btn btn-danger" onclick="eliminar(${i})">Eliminar Articulo x</button>
               </div>
+              </tr>
               <hr>   
           `
       }
@@ -141,3 +144,9 @@ form.addEventListener('submit',function(event){
     })
 })();
 
+function eliminar(i){
+  if(articles.length > 1){
+    articles.splice(i,1);
+    document.getElementById(`carri${i}`).remove();
+  }
+}
